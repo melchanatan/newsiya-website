@@ -26,14 +26,18 @@
 }
 
 h1 {
- font-family: "Maehongson", "sans-serif";
+  @apply text-hero-clamp font-semibold leading-[1] tracking-wide;
 }
 
 
 .nav_item {
-  @apply text-sm cursor-pointer font-outfit hover:scale-125 transition-all duration-200 active:translate-y-5;
+  @apply  cursor-pointer font-outfit hover:scale-125 transition-all duration-200 active:translate-y-5 font-bold text-accent-darken;
 }
 
 .link_button {
-  @apply text-sm font-outfit bg-accent-darken text-white rounded-full px-3 py-1 hover:bg-transparent  hover:backdrop-blur-md hover:text-accent-darken transition-all duration-200 active:translate-y-5 hover:scale-110 hover:border-accent-darken hover:border-2;
+  @apply  font-outfit bg-accent-darken text-white rounded-full px-3 py-1 hover:bg-transparent  hover:backdrop-blur-md hover:text-accent-darken transition-all duration-100 active:translate-y-5 hover:scale-110 hover:border-accent-darken hover:border-2;
+}
+
+.padding_page {
+  @apply px-4 md:px-[6vw]
 }

@@ -13,7 +13,11 @@ module.exports = {
       },
       colors: {
         "accent-darken": "#333B44",
-        "primary": "#FFFAF3"
+        "primary": "#FFFAF3",
+        "primary-darken": "#C3AC93"
+      },
+      fontSize: {
+        "hero-clamp": "clamp(2rem, 5vw, 4.5rem)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
