@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         outfit: ["Outfit", 'sans-serif'],
-        maehongson: ["Maehongson", 'sans-serif']
+        maehongson: ["var(--font-maehongson)", 'sans-serif']
       },
       colors: {
         "accent-darken": "#333B44",
