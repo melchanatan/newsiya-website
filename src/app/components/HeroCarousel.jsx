@@ -16,9 +16,16 @@ const HeroCarousel = () => {
     };
 
     const paginate = (newDirection) => {
-        setCurrentImageIndex(
-            prev => (prev + 1*newDirection) % imageUrls.length
-        );
+        if (newDirection < 0 && currentImageIndex == 0) {
+            setCurrentImageIndex(imageUrls.length - 1);
+            return;
+        }
+        else {
+            setCurrentImageIndex(
+                prev => (prev + 1*newDirection) % imageUrls.length
+            );
+        }
+
     };
 
     const variants = {
