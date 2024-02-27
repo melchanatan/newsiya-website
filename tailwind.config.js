@@ -7,6 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        outfit: ["Outfit", 'sans-serif'],
+        secondary: ['inter', 'sans-serif']
+      },
+      colors: {
+        "accent-darken": "#333B44",
+        "primary": "#FFFAF3"
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
