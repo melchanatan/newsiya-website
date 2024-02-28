@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <main className="bg-primary h-[100vh] rounded-b-[4rem] flex flex-col">
         <HeroCarousel/>
-        <header className="padding_page flex items-center justify-center flex-1">
+        <header className="padding_page flex items-center justify-center justify-between flex-1">
           <div className="">
             <h1 className="text-accent-darken ">ที่พักชั้นหนึ่งสำหรับความสบายที่คุ้มค่า</h1>
             <h1 className="text-primary-darken">ในการเดินทางธุรกิจของคุณ </h1>
@@ -39,7 +39,7 @@ export default function Home() {
         </header>
       </main>
       <section id="rooms" className="padding_page grid grid-cols-3 py-10 gap-y-8 gap-x-10">
-        <h1 className=" col-span-full heading">Rooms</h1>
+        <h1 className="text-primary-darken col-span-full uppercase">Rooms</h1>
         <div className="room_image">
         <Image className="room_image" src={'/room-1.png'} width={400} height={400}>
         </Image>
@@ -72,7 +72,7 @@ export default function Home() {
         </div>
       </section>
       <section id="services" className="bg-primary py-10 align-center justify-center flex flex-col items-center">
-        <h1 className="heading mb-5">Services</h1>
+        <h1 className="text-primary-darken uppercase mb-5">Services</h1>
 
         <div className="flex flex-col items-center justify-center ">
           <Image className="rounded-[40px] mb-4" src={'/service-1.jpg'} width={400} height={500}></Image>
@@ -83,7 +83,7 @@ export default function Home() {
         </div>
       </section>
       <section id="reviews" className="bg-white py-10 padding_page !pr-0">
-      <h1 className="heading mb-5">Reviews</h1>
+      <h1 className="text-primary-darken uppercase mb-5">Reviews</h1>
       <div className="flex gap-5 items-center justify-start">
         <div className="border-primary-darken border-2 w-[5wv] px-4 py-2 rounded-[24px]">
             <h4 className="text-xl mb-1">เอกชัยเปงวัง</h4>
