@@ -31,11 +31,11 @@ h1 {
 
 
 .nav_item {
-  @apply  cursor-pointer font-outfit hover:scale-125 transition-all duration-200 active:translate-y-5 font-bold text-accent-darken;
+  @apply  cursor-pointer font-outfit hover:scale-125 transition-all duration-200 active:translate-y-2 font-semibold text-accent-darken p-2 select-none;
 }
 
 .link_button {
-  @apply  font-outfit bg-accent-darken text-white rounded-full px-3 py-1 hover:bg-transparent  hover:backdrop-blur-md hover:text-accent-darken transition-all duration-100 active:translate-y-5 hover:scale-110 hover:border-accent-darken hover:border-2;
+  @apply  font-outfit bg-accent-darken text-white rounded-full px-3 py-1 hover:bg-transparent  hover:backdrop-blur-md hover:text-accent-darken transition-all duration-100 active:translate-y-2 hover:scale-110 hover:border-accent-darken hover:border-2;
 }
 
 .padding_page {

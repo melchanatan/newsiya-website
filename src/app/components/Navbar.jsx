@@ -8,7 +8,7 @@ const Navbar = () => {
           <Image src="/newsiya-logo.svg" alt="Vercel Logo" width={48} height={16} />
         </a>
         
-        <ul className="flex gap-[5vw] ml-auto uppercase items-centerv ">
+        <ul className="flex gap-[5vw] ml-auto uppercase items-center">
             <li className="nav_item">Rooms</li>
             <li className="nav_item">Services</li>
             <li className="nav_item">Contacts</li>

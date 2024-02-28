@@ -1,21 +1,31 @@
 "use client"
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion"
+import { cubicBezier } from "framer-motion"
 
 const HeroCarousel = () => {
     const imageUrls = [
         '/hero-img.png',
         '/hero-img-2.jpg',
     ]
+    const easing = cubicBezier(.86,.21,.03,1)
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+    var [intervalStop, setIntervalStop] = useState(false);
+    
     const swipeConfidenceThreshold = 10000;
+
     const swipePower = (offset, velocity) => {
     return Math.abs(offset) * velocity;
     };
 
-    const paginate = (newDirection) => {
+    const paginate = (newDirection, fromUser=true) => {
+        if (fromUser) {
+            intervalStop = true;
+        }
+
         if (newDirection < 0 && currentImageIndex == 0) {
             setCurrentImageIndex(imageUrls.length - 1);
             return;
@@ -49,6 +59,24 @@ const HeroCarousel = () => {
         }
     };
 
+    useEffect(() => {
+        if (intervalStop) {
+            clearTimeout(startTimer);
+            setIntervalStop(false);
+            return;
+        } 
+
+        var startTimer = setInterval(() => {
+            console.log(intervalStop);
+
+            paginate(1, false);
+        }, 4000);
+
+        return () => {
+            clearInterval(startTimer);
+        }
+    }, [intervalStop])
+
     return (
         <AnimatePresence initial={false} >
             <div className="overflow-hidden w-full h-[70vh] max-h-[60rem] bg-no-repeat bg-center aspect-auto  bg-cover rounded-b-[8vw] border-primary-darken border-b-[10px] relative z-0 bg-primary-darken">
@@ -61,8 +89,8 @@ const HeroCarousel = () => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{
-                        ease: "linear",
-                        duration: 1,
+                        ease: easing,
+                        duration: 2,
                       }}
                     drag="x"
                     dragConstraints={{ left: 0, right: 0 }}
@@ -84,7 +112,10 @@ const HeroCarousel = () => {
                         imageUrls.map((imageUrl, index) => 
                             <IndexIndicator 
                                 isActive={index == currentImageIndex}
-                                onClick={() => setCurrentImageIndex(index)}
+                                onClick={() => {
+                                    setCurrentImageIndex(index);
+                                    setIntervalStop(true);
+                                }}
                                 key={index}
                             />
                         )
