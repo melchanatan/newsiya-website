@@ -29,6 +29,10 @@ h1 {
   @apply text-hero-clamp font-semibold leading-[1] tracking-wide;
 }
 
+.heading {
+  @apply font-extrabold font-outfit uppercase text-primary-darken;
+}
+
 .nav_scrolled {
   @apply sticky top-0 backdrop-blur-sm;
 }
