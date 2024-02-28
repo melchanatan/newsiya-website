@@ -2,6 +2,7 @@ import Image from "next/image";
 import { IoMdStarOutline } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import HeroCarousel from "./components/HeroCarousel";
+import MyMap from "./components/MyMap";
 
 export default function Home() {
   return (
@@ -94,6 +95,10 @@ export default function Home() {
       </div>
 
       </section>
+  <section id="maps">
+    <MyMap></MyMap>
+
+  </section>
     </>
   );
 }

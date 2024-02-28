@@ -1,5 +1,5 @@
-import "@/styles/globals.css"
-import Navbar from "@/app/components/Navbar"
+import "../styles/globals.css"
+import Navbar from "./components/Navbar"
 import localFont from 'next/font/local'
 
 
