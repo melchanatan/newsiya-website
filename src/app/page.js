@@ -35,9 +35,11 @@ export default function Home() {
               <IoIosArrowRoundForward className="w-[2.4rem] h-[2.4rem] stroke-accent-darken"/>
             </div>
           </div>
-          
         </div>
       </header>
+      <section className="padding_page h-screen">
+
+      </section>
 
     </main>
   );

@@ -29,6 +29,9 @@ h1 {
   @apply text-hero-clamp font-semibold leading-[1] tracking-wide;
 }
 
+.nav_scrolled {
+  @apply sticky top-0;
+}
 
 .nav_item {
   @apply  cursor-pointer font-outfit hover:scale-125 transition-all duration-200 active:translate-y-2 font-semibold text-accent-darken p-2 select-none;
