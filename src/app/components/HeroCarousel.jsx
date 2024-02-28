@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react'
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion"
 import { cubicBezier } from "framer-motion"
+import InteractiveOverlay from './InteractiveOverlay';
 
 const HeroCarousel = () => {
     const imageUrls = [
@@ -105,7 +106,11 @@ const HeroCarousel = () => {
                         }
                     }}
                 />
-                <Image src={imageUrls[currentImageIndex]} alt='' className='w-full h-full object-cover' width={1920} height={1080}></Image>
+                <InteractiveOverlay 
+                    className={`absolute top-0 left-0 w-full h-full`} 
+                    handleClickLeft={() => paginate(-1)} 
+                    handleClickRight={() => paginate(1)}
+                />
 
                 <ul className='right-[8vw] bottom-[1.4rem] absolute flex gap-3'>
                     {
