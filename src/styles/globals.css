@@ -30,7 +30,7 @@ h1 {
 }
 
 .nav_scrolled {
-  @apply sticky top-0;
+  @apply sticky top-0 backdrop-blur-sm;
 }
 
 .nav_item {
@@ -43,4 +43,24 @@ h1 {
 
 .padding_page {
   @apply px-4 md:px-[6vw]
+}
+
+.room_image {
+  @apply col-span-2 w-full rounded-[50px] relative;
+}
+
+.room_header {
+  @apply text-3xl font-semibold text-accent-darken
+}
+
+.room_price {
+  @apply absolute bottom-0  flex bg-white px-5 py-3 items-end;
+}
+
+.room_price--right {
+  @apply right-0 rounded-tl-[30px];
+}
+
+.room_price--left {
+  @apply left-0 rounded-tr-[30px];
 }

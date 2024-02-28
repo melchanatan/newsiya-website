@@ -18,7 +18,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.nav whileInView={{ opacity: [0, 1] }} initial={{ opacity: 0 }} transition={{ duration: 0.5 }} className="flex items-center absolute padding_page py-5 w-full bg-gradient-to-b from-white/60 to-transparent from-10% z-40">
+    <motion.nav whileInView={{ opacity: [0, 1] }} initial={{ opacity: 0 }} transition={{ duration: 0.5 }} className="flex items-center absolute padding_page py-5 w-full bg-gradient-to-b from-white/80 to-transparent from-10% z-40">
         <a href="">
           <Image src="/newsiya-logo.svg" alt="Vercel Logo" width={48} height={16} />
         </a>
