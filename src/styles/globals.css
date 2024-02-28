@@ -49,7 +49,7 @@ h1 {
   @apply col-span-2 w-full rounded-[50px] relative;
 }
 
-.room_header {
+.header-3 {
   @apply text-3xl font-semibold text-accent-darken
 }
 

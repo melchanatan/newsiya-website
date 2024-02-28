@@ -108,8 +108,14 @@ const HeroCarousel = () => {
                 />
                 <InteractiveOverlay 
                     className={`absolute top-0 left-0 w-full h-full`} 
-                    handleClickLeft={() => paginate(-1)} 
-                    handleClickRight={() => paginate(1)}
+                    handleClickLeft={() => {
+                        paginate(-1);
+                        setIntervalStop(true);
+                    }} 
+                    handleClickRight={() => {
+                        paginate(1);
+                        setIntervalStop(true);
+                    }}
                 />
 
                 <ul className='right-[8vw] bottom-[1.4rem] absolute flex gap-3'>

@@ -38,7 +38,7 @@ export default function Home() {
           </div>
         </header>
       </main>
-      <section className="padding_page grid grid-cols-3 mt-10 gap-y-8 gap-x-10">
+      <section id="rooms" className="padding_page grid grid-cols-3 py-10 gap-y-8 gap-x-10">
         <h1 className="text-primary-darken col-span-full uppercase">Rooms</h1>
         <div className="room_image">
         <Image className="room_image" src={'/room-1.png'} width={400} height={400}>
@@ -47,11 +47,9 @@ export default function Home() {
           <h1 className="text-accent-darken !tracking-tight">800 ฿</h1>
           <span className="text-accent-darken text-xl">/ คืน</span>
         </div>
-
         </div>
-
         <div className="flex flex-col items-start justify-center">
-          <h3 className="room_header">ห้องสวีท</h3>
+          <h3 className="header-3">ห้องสวีท</h3>
           <p className="mb-5">
             ไอซียู อ่อนด้อยเอเซีย นิวหมั่นโถว แอปเปิ้ล เคลื่อนย้าย ตุ๊กตุ๊กศากยบุตรหน่อมแน้ม เฮียไวอากร้าพาร์ทเนอร์ ฮวงจุ้ยบาร์บี้อุรังคธาตุ มิวสิคกุมภาพันธ์ไฮไลต์ สตริงสามแยกแครอทกระดี๊กระด๊ากระดี๊กระด๊า
           </p>
@@ -59,7 +57,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col items-end justify-center">
-          <h3 className="room_header">ห้องธรรมดา</h3>
+          <h3 className="header-3">ห้องธรรมดา</h3>
           <p className="mb-5 text-end">
             ไอซียู อ่อนด้อยเอเซีย นิวหมั่นโถว แอปเปิ้ล เคลื่อนย้าย ตุ๊กตุ๊กศากยบุตรหน่อมแน้ม เฮียไวอากร้าพาร์ทเนอร์ ฮวงจุ้ยบาร์บี้อุรังคธาตุ มิวสิคกุมภาพันธ์ไฮไลต์ สตริงสามแยกแครอทกระดี๊กระด๊ากระดี๊กระด๊า
           </p>
@@ -71,8 +69,29 @@ export default function Home() {
             <h1 className="text-accent-darken !tracking-tight">650 ฿</h1>
             <span className="text-accent-darken text-xl">/ คืน</span>
           </div>
-          
         </div>
+      </section>
+      <section id="services" className="bg-primary py-10 align-center justify-center flex flex-col items-center">
+        <h1 className="text-primary-darken uppercase mb-5">Services</h1>
+
+        <div className="flex flex-col items-center justify-center ">
+          <Image className="rounded-[40px] mb-4" src={'/service-1.jpg'} width={400} height={500}></Image>
+          <h3 className="header-3">สระว่างนำ้</h3>
+          <p className="w-[45ch] text-center">
+            ไอซียู อ่อนด้อยเอเซีย นิวหมั่นโถว แอปเปิ้ล เคลื่อนย้าย ตุ๊กตุ๊กศากยบุตรหน่อมแน้ม เฮียไวอากร้าพาร์ทเนอร์ ฮวงจุ้ยบาร์บี้อุรังคธาตุ มิวสิคกุมภาพันธ์ไฮไลต์ สตริงสามแยกแครอทกระดี๊กระด๊ากระดี๊กระด๊า
+          </p>
+        </div>
+      </section>
+      <section id="reviews" className="bg-white py-10 padding_page !pr-0">
+      <h1 className="text-primary-darken uppercase mb-5">Reviews</h1>
+      <div className="flex gap-5 items-center justify-start">
+        <div className="border-primary-darken border-2 w-[5wv] px-4 py-2 rounded-[24px]">
+            <h4 className="text-xl mb-1">เอกชัยเปงวัง</h4>
+            <p>ไอซียู อ่อนด้อยเอเซีย นิวหมั่นโถว แอปเปิ้ล เคลื่อนย้าย </p>
+            <p className="text-[#8C8C8C]">เมื่อวันที่ 25 พ.ย. 2024</p>
+          </div>
+
+      </div>
 
       </section>
     </>
