@@ -11,13 +11,13 @@ export default function Home() {
     <>
       <main className="bg-primary h-[100vh] rounded-b-[4rem] flex flex-col">
         <HeroCarousel/>
-        <header className="padding_page flex items-center justify-center justify-between flex-1">
+        <header className="padding_page flex md:items-center md:justify-between flex-1 flex-col md:flex-row items-start justify-center">
           <div className="">
-            <h1 className="text-accent-darken ">ที่พักชั้นหนึ่งสำหรับความสบายที่คุ้มค่า</h1>
+            <h1 className="text-accent-darken ">ที่พักชั้นหนึ่งสำหรับความสบายที่คุ้ม</h1>
             <h1 className="text-primary-darken">ในการเดินทางธุรกิจของคุณ </h1>
           </div>
-          <div className="flex gap-[4vw] justify-center">
-            <div className="">
+          <div className="flex gap-[4vw] justify-center items-end">
+            <div className="order-2 md:order-1">
               <span className="flex items-center">
                 <h1 className="text-accent-darken">7.0</h1>
               <IoMdStarOutline  className="w-[4.6vw] h-[4.6vw] max-h-[4rem] max-w-[4rem] text-accent-darken" />
@@ -42,7 +42,7 @@ export default function Home() {
         </header>
       </main>
       <section id="rooms" className="padding_page grid grid-cols-3 py-10 gap-y-8 gap-x-10">
-        <h1 className="heading col-span-full ">Rooms</h1>
+        <h1 className="heading col-span-full">Rooms</h1>
         <div className="room_image">
         <Image className="room_image" src={'/room-1.png'} width={400} height={400}>
         </Image>
@@ -51,17 +51,19 @@ export default function Home() {
           <span className="text-accent-darken text-xl">/ คืน</span>
         </div>
         </div>
-        <div className="flex flex-col items-start justify-center">
+        <div className="room_info_container mb-4 md:mb-0">
           <h3 className="header-3">ห้องสวีท</h3>
-          <p className="mb-5">
-            ไอซียู อ่อนด้อยเอเซีย นิวหมั่นโถว แอปเปิ้ล เคลื่อนย้าย ตุ๊กตุ๊กศากยบุตรหน่อมแน้ม เฮียไวอากร้าพาร์ทเนอร์ ฮวงจุ้ยบาร์บี้อุรังคธาตุ มิวสิคกุมภาพันธ์ไฮไลต์ สตริงสามแยกแครอทกระดี๊กระด๊ากระดี๊กระด๊า
-          </p>
-          <a href="" className="link_button !font-maehongson !tracking-widest">เรียนรู้เพิ่มเติม</a>
+          <div className="">
+            <p className="mb-5 md:w-auto">
+              ไอซียู อ่อนด้อยเอเซีย นิวหมั่นโถว แอปเปิ้ล เคลื่อนย้าย ตุ๊กตุ๊กศากยบุตรหน่อมแน้ม เฮียไวอากร้าพาร์ทเนอร์ ฮวงจุ้ยบาร์บี้อุรังคธาตุ มิวสิคกุมภาพันธ์ไฮไลต์ สตริงสามแยกแครอทกระดี๊กระด๊ากระดี๊กระด๊า
+            </p>
+            <a href="" className="link_button !font-maehongson !tracking-widest">เรียนรู้เพิ่มเติม</a>
+          </div>
         </div>
 
-        <div className="flex flex-col items-end justify-center">
+        <div className="room_info_container order-1 md:order-auto ">
           <h3 className="header-3">ห้องธรรมดา</h3>
-          <p className="mb-5 text-end">
+          <p className="mb-5 md:text-end">
             ไอซียู อ่อนด้อยเอเซีย นิวหมั่นโถว แอปเปิ้ล เคลื่อนย้าย ตุ๊กตุ๊กศากยบุตรหน่อมแน้ม เฮียไวอากร้าพาร์ทเนอร์ ฮวงจุ้ยบาร์บี้อุรังคธาตุ มิวสิคกุมภาพันธ์ไฮไลต์ สตริงสามแยกแครอทกระดี๊กระด๊ากระดี๊กระด๊า
           </p>
           <a href="" className="link_button !font-maehongson !tracking-widest">เรียนรู้เพิ่มเติม</a>

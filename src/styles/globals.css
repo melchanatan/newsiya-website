@@ -86,7 +86,7 @@ h1 {
 }
 
 .room_image {
-  @apply col-span-2 w-full rounded-[50px] relative;
+  @apply col-span-full md:col-span-2 w-full rounded-[50px] relative;
 }
 
 .header-3 {
@@ -103,4 +103,8 @@ h1 {
 
 .room_price--left {
   @apply left-0 rounded-tr-[30px];
+}
+
+.room_info_container {
+  @apply flex flex-col items-start justify-center col-span-full md:col-span-2
 }
