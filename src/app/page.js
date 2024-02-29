@@ -3,6 +3,7 @@ import { IoMdStarOutline } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import HeroCarousel from "./components/HeroCarousel";
 import MyMap from "./components/MyMap";
+import ServicesCarousel from "./components/ServicesCarousel";
 
 export default function Home() {
   return (
@@ -75,13 +76,7 @@ export default function Home() {
       <section id="services" className="bg-primary py-10 align-center justify-center flex flex-col items-center">
         <h1 className="mb-5 heading">Services</h1>
 
-        <div className="flex flex-col items-center justify-center ">
-          <Image className="rounded-[40px] mb-4" src={'/service-1.jpg'} width={400} height={500}></Image>
-          <h3 className="header-3">สระว่างนำ้</h3>
-          <p className="w-[45ch] text-center">
-            ไอซียู อ่อนด้อยเอเซีย นิวหมั่นโถว แอปเปิ้ล เคลื่อนย้าย ตุ๊กตุ๊กศากยบุตรหน่อมแน้ม เฮียไวอากร้าพาร์ทเนอร์ ฮวงจุ้ยบาร์บี้อุรังคธาตุ มิวสิคกุมภาพันธ์ไฮไลต์ สตริงสามแยกแครอทกระดี๊กระด๊ากระดี๊กระด๊า
-          </p>
-        </div>
+        <ServicesCarousel />
       </section>
       <section id="reviews" className="bg-white py-20 padding_page !pr-0">
       <h1 className="heading mb-5">Reviews</h1>

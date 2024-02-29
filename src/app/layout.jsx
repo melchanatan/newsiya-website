@@ -27,7 +27,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={maehongson.className}>
+      <body className={maehongson.className + " overflow-x-hidden"}>
         <Navbar />
         {children}
         <Footer />
