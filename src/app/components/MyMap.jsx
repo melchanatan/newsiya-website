@@ -2,6 +2,7 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import 'dotenv/config'
+import { FaLocationDot } from "react-icons/fa6";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -28,19 +29,20 @@ const MyMap = ({className}) => {
         disableDefaultUI={true}
         options={myOptions}
       >
-        <AnyReactComponent
-          lat={59.955413}
-          lng={30.337844}
-          text="My Marker"
+        <LocationPin
+          lat={defaultProps.center.lat}
+          lng={defaultProps.center.lng}
         />
+
       </GoogleMapReact>
     </div>
   );
 };
 
 export default MyMap;
-// const LocationPin = ({ text }) => (
-//     <div className="pin">
-//         <p className="pin-text">{text}</p>
-//     </div>
-// )
+
+const LocationPin = ({ text }) => (
+    <div className="pin">
+        <FaLocationDot className="w-10 h-10 fill-primary-darken" />
+    </div>
+)
