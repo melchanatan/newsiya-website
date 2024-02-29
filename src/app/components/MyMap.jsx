@@ -1,24 +1,32 @@
-
+"use client"
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
+import 'dotenv/config'
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-const MyMap = () => {
+const MyMap = ({className}) => {
   const defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 16.17935172307012,
+      lng: 103.30445666498697
     },
-    zoom: 11
+    zoom: 17
   };
 
+  var myOptions = {
+    disableDefaultUI: true,
+    // mapTypeId: google.maps.MapTypeId.ROADMAP  
+  }
+
   return (
-    <div style={{ height: '100vh', width: '100%' }}>
+    <div className={className}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk' }}
+        bootstrapURLKeys={{ key: process.env.GOOGLE_MAP_API_KEY }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
+        disableDefaultUI={true}
+        options={myOptions}
       >
         <AnyReactComponent
           lat={59.955413}

@@ -96,7 +96,7 @@ export default function Home() {
 
       </section>
   <section id="maps">
-    <MyMap></MyMap>
+    <MyMap className="w-[60vw] h-[40vh]" />
 
   </section>
     </>
