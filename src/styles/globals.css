@@ -61,12 +61,21 @@ h1 {
 }
 
 .nav_item {
-  @apply  cursor-pointer font-outfit hover:scale-125 transition-all duration-200 active:translate-y-2 font-semibold text-accent-darken p-2 select-none;
+  @apply hidden md:inline cursor-pointer font-outfit hover:scale-125 transition-all duration-200 active:translate-y-2 font-semibold text-accent-darken p-2 select-none;
+}
+
+.mobile-nav_item {
+  @apply text-5xl font-semibold tracking-wider text-accent-darken p-2 select-none;
+}
+.mobile-nav_cta {
+  @apply font-outfit bg-accent-darken text-4xl text-white rounded-full px-5 py-3 hover:bg-transparent  hover:backdrop-blur-md hover:text-accent-darken transition-all duration-100 active:translate-y-2 hover:scale-110 hover:border-accent-darken hover:border-2;
 }
 
 .link_button {
   @apply  font-outfit bg-accent-darken text-white rounded-full px-3 py-1 hover:bg-transparent  hover:backdrop-blur-md hover:text-accent-darken transition-all duration-100 active:translate-y-2 hover:scale-110 hover:border-accent-darken hover:border-2;
 }
+
+
 
 .padding_page {
   @apply px-4 md:px-[6vw]

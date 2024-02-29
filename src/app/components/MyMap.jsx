@@ -15,9 +15,178 @@ const MyMap = ({className}) => {
     zoom: 17
   };
 
+  const customMapStyling = 
+  [
+    {
+      "elementType": "labels",
+      "stylers": [
+        {
+          "color": "#5b718b"
+        }
+      ]
+    },
+    {
+      "elementType": "labels.icon",
+      "stylers": [
+        {
+          "color": "#333b44"
+        }
+      ]
+    },
+    {
+      "elementType": "labels.text",
+      "stylers": [
+        {
+          "color": "#333b44"
+        }
+      ]
+    },
+    {
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#333b44"
+        }
+      ]
+    },
+    {
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+          "color": "#333b44"
+        }
+      ]
+    },
+    {
+      "featureType": "landscape.man_made",
+      "stylers": [
+        {
+          "color": "#fffaf3"
+        }
+      ]
+    },
+    {
+      "featureType": "landscape.natural",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#fffaf3"
+        }
+      ]
+    },
+    {
+      "featureType": "landscape.natural.landcover",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#fffaf3"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
+      "stylers": [
+        {
+          "color": "#e4cbaf"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
+      "elementType": "labels.text",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.business",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#e4cbaf"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.government",
+      "stylers": [
+        {
+          "color": "#e4cbaf"
+        }
+      ]
+    },
+    {
+      "featureType": "road",
+      "stylers": [
+        {
+          "color": "#b7b1a4"
+        }
+      ]
+    },
+    {
+      "featureType": "road",
+      "elementType": "labels",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#c3ac93"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+          "color": "#c3ac93"
+        },
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "labels",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "labels.text",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#d9cef2"
+        }
+      ]
+    }
+  ]
+
   var myOptions = {
     disableDefaultUI: true,
-    // mapTypeId: google.maps.MapTypeId.ROADMAP  
+    // styles: customMapStyling,
   }
 
   return (
@@ -50,6 +219,6 @@ const LocationPin = ({ text }) => (
       width: "24px",
       transform: "translate(-50%, -100%)",
       }}>
-        <FaLocationDot className="w-10 h-10 fill-primary-darken" />
+        <FaLocationDot className="w-10 h-10 fill-accent-darken" />
     </div>
 )

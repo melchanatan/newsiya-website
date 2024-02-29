@@ -79,7 +79,7 @@ export default function Home() {
 
         <ServicesCarousel />
       </section>
-      <section id="reviews" className="bg-white py-20 !pr-0">
+      <section id="reviews" className="bg-white py-10 pb-20 !pr-0">
       <h1 className="heading mb-5 padding_page ">Reviews</h1>
       <ReviewsSlider />
 
