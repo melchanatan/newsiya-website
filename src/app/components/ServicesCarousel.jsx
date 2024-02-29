@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const ServicesCarousel = () => {
   return (
-    <div className="flex flex-row items-center justify-center gap-10 w-[130vw]">
+    <div className="flex flex-row items-center justify-center gap-[5vw] w-[130vw]">
         <Image className="rounded-[40px] mb-4 w-[33%]" src={'/service-1.jpg'} width={400} height={500}></Image>
         <div className="w-[33%]">
-            <Image className="rounded-[40px] mb-4" src={'/service-1.jpg'} width={400} height={500}></Image>
+            <Image className="rounded-[40px] mb-4 w-full" src={'/service-1.jpg'} width={400} height={500}></Image>
             <div className="text-center items-center flex flex-col">
                 <h3 className="header-3">สระว่างนำ้</h3>
                 <p className="w-[36ch] text-center">
