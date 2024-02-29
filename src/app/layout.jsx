@@ -1,7 +1,7 @@
 import "../styles/globals.css"
 import Navbar from "./components/Navbar"
 import localFont from 'next/font/local'
-
+import Footer from "./components/Footer";
 
 const maehongson = localFont({
   src: [
@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
       <body className={maehongson.className}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

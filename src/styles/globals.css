@@ -24,11 +24,34 @@
     text-wrap: balance;
   }
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #333B44;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  
+}
 
 h1 {
   @apply text-hero-clamp font-semibold leading-[1] tracking-wide;
 }
 
+.heading {
+  @apply font-outfit font-bold text-primary-darken uppercase;
+}
 .nav_scrolled {
   @apply sticky top-0 backdrop-blur-sm;
 }
@@ -43,6 +66,10 @@ h1 {
 
 .padding_page {
   @apply px-4 md:px-[6vw]
+}
+
+.icon_link {
+  @apply hover:scale-125 transition-all duration-100 active:translate-y-2 hover:opacity-75;
 }
 
 .room_image {
