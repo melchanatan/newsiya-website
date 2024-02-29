@@ -13,16 +13,16 @@ export default function Home() {
         <HeroCarousel/>
         <header className="padding_page flex md:items-center md:justify-between flex-1 flex-col md:flex-row items-start justify-center">
           <div className="">
-            <h1 className="text-accent-darken ">ที่พักชั้นหนึ่งสำหรับความสบายที่คุ้ม</h1>
-            <h1 className="text-primary-darken">ในการเดินทางธุรกิจของคุณ </h1>
+            <h1 className="!text-hero-clamp text-accent-darken ">ที่พักชั้นหนึ่งสำหรับความสบายที่คุ้ม</h1>
+            <h1 className="!text-hero-clamp  text-primary-darken">ในการเดินทางธุรกิจของคุณ </h1>
           </div>
-          <div className="flex gap-[4vw] justify-center items-end">
+          <div className="flex gap-[4vw] justify-center items-start">
             <div className="order-2 md:order-1">
-              <span className="flex items-center">
+              <span className="flex items-center justify-between min-h-[48px]">
                 <h1 className="text-accent-darken">7.0</h1>
               <IoMdStarOutline  className="w-[4.6vw] h-[4.6vw] max-h-[4rem] max-w-[4rem] text-accent-darken" />
               </span>
-              <p className="text-xl">จาก agoda</p>
+              <p className="text-xl mt-[4px]">จาก agoda</p>
             </div>
             <div className="flex flex-col">
               <span className="flex items-center">
@@ -41,7 +41,7 @@ export default function Home() {
           </div>
         </header>
       </main>
-      <section id="rooms" className="padding_page grid grid-cols-3 py-10 gap-y-8 gap-x-10">
+      <section id="rooms" className="padding_page grid grid-cols-3  gap-y-8 gap-x-10">
         <h1 className="heading col-span-full">Rooms</h1>
         <div className="room_image">
         <Image className="room_image" src={'/room-1.png'} width={400} height={400}>
@@ -61,12 +61,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="room_info_container order-1 md:order-auto ">
-          <h3 className="header-3">ห้องธรรมดา</h3>
+        <div className="room_info_container order-1 md:order-[0] ">
+          <h3 className="header-3 md:ml-auto">ห้องธรรมดา</h3>
           <p className="mb-5 md:text-end">
             ไอซียู อ่อนด้อยเอเซีย นิวหมั่นโถว แอปเปิ้ล เคลื่อนย้าย ตุ๊กตุ๊กศากยบุตรหน่อมแน้ม เฮียไวอากร้าพาร์ทเนอร์ ฮวงจุ้ยบาร์บี้อุรังคธาตุ มิวสิคกุมภาพันธ์ไฮไลต์ สตริงสามแยกแครอทกระดี๊กระด๊ากระดี๊กระด๊า
           </p>
-          <a href="" className="link_button !font-maehongson !tracking-widest">เรียนรู้เพิ่มเติม</a>
+          <a href="" className="link_button !font-maehongson !tracking-widest  md:ml-auto">เรียนรู้เพิ่มเติม</a>
         </div>
         <div className="room_image">
           <Image className="room_image" src={'/room-1.png'} width={400} height={400}></Image>
@@ -76,18 +76,18 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="services" className="bg-primary py-10 align-center justify-center flex flex-col items-center">
+      <section id="services" className="bg-primary  align-center justify-center flex flex-col items-center">
         <h1 className="mb-5 heading">Services</h1>
 
         <ServicesCarousel />
       </section>
-      <section id="reviews" className="bg-white py-10 pb-20 !pr-0">
+      <section id="reviews" className="bg-white  pb-20 !pr-0">
       <h1 className="heading mb-5 padding_page ">Reviews</h1>
       <ReviewsSlider />
 
       </section>
-  <section id="maps" className="flex gap-[5vw] bg-primary">
-    <MyMap className="w-[60vw] h-[40vh]" />
+  <section id="maps" className="flex gap-[5vw] bg-primary !py-0">
+    <MyMap className="w-[60vw] h-[40vh] lg:w-[50vw]" />
     <div className="mt-[4vh] ">
       <h1 className="heading mb-5">Contacts</h1>
       <p className="w-[36ch]">

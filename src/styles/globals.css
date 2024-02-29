@@ -50,12 +50,17 @@ html {
 }
 
 h1 {
-  @apply text-hero-clamp font-semibold leading-[1] tracking-wide;
+  @apply text-title-clamp font-semibold leading-[1] tracking-wide;
+}
+
+section {
+  @apply py-10 lg:py-20
 }
 
 .heading {
   @apply font-outfit font-bold text-primary-darken uppercase;
 }
+
 .nav_scrolled {
   @apply sticky top-0 backdrop-blur-sm;
 }
@@ -75,10 +80,8 @@ h1 {
   @apply  font-outfit bg-accent-darken text-white rounded-full px-3 py-1 hover:bg-transparent  hover:backdrop-blur-md hover:text-accent-darken transition-all duration-100 active:translate-y-2 hover:scale-110 hover:border-accent-darken hover:border-2;
 }
 
-
-
 .padding_page {
-  @apply px-4 md:px-[6vw]
+  @apply px-4 md:px-[6vw] xl:px-[10vw];
 }
 
 .icon_link {
@@ -106,5 +109,5 @@ h1 {
 }
 
 .room_info_container {
-  @apply flex flex-col items-start justify-center col-span-full md:col-span-2
+  @apply flex flex-col items-start justify-center col-span-full md:col-span-1
 }

@@ -17,7 +17,9 @@ module.exports = {
         "primary-darken": "#C3AC93"
       },
       fontSize: {
-        "hero-clamp": "clamp(2rem, 4vw, 4.5rem)",
+        "hero-clamp": "clamp(2rem, 4vw, 4rem)",
+        "title-clamp": "clamp(2rem, 4vw, 3rem)",
+
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
