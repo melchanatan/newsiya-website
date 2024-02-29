@@ -24,10 +24,10 @@ const Navbar = () => {
         </a>
         
         <ul className="flex gap-[5vw] ml-auto uppercase items-center">
-            <li className="nav_item">Rooms</li>
-            <li className="nav_item">Services</li>
-            <li className="nav_item">Contacts</li>
-            <li className="nav_item">Gallery</li>
+            <li className="nav_item"><a href="#rooms">Rooms</a></li>
+            <li className="nav_item"><a href="#services">Services</a></li>
+            <li className="nav_item"><a href="#contacts">Contacts</a></li>
+            <li className="nav_item"><a href="">Gallery</a></li>
             <a href="" className="link_button">Book Now</a>
         </ul>
     </motion.nav>

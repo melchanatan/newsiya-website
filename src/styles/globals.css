@@ -45,6 +45,10 @@
   
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   @apply text-hero-clamp font-semibold leading-[1] tracking-wide;
 }
