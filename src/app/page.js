@@ -12,15 +12,15 @@ export default function Home() {
       <main className="bg-primary h-[100vh] rounded-b-[4rem] flex flex-col">
         <HeroCarousel/>
         <header className="padding_page flex md:items-center md:justify-between flex-1 flex-col md:flex-row items-start justify-center">
-          <div className="">
-            <h1 className="!text-hero-clamp text-accent-darken ">ที่พักชั้นหนึ่งสำหรับความสบายที่คุ้ม</h1>
+          <div className="mb-3 md:mb-0">
+            <h1 className="!text-hero-clamp text-accent-darken ">NEWSILA HOTEL</h1>
             <h1 className="!text-hero-clamp  text-primary-darken">ในการเดินทางธุรกิจของคุณ </h1>
           </div>
           <div className="flex gap-[4vw] justify-center items-start">
             <div className="order-2 md:order-1">
               <span className="flex items-center justify-between min-h-[48px]">
                 <h1 className="text-accent-darken">7.0</h1>
-              <IoMdStarOutline  className="w-[4.6vw] h-[4.6vw] max-h-[4rem] max-w-[4rem] text-accent-darken" />
+              <IoMdStarOutline  className="min-h-[1.5rem] min-w-[1.5rem] w-[4.6vw] h-[4.6vw] max-h-[4rem] max-w-[4rem] text-accent-darken" />
               </span>
               <p className="text-xl mt-[4px]">จาก agoda</p>
             </div>
