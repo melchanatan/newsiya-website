@@ -74,7 +74,7 @@ section {
 }
 
 .mobile-nav_item {
-  @apply text-5xl font-semibold tracking-wider text-accent-darken p-2 select-none;
+  @apply text-5xl font-semibold tracking-wider text-accent-darken p-2 select-none active:scale-125 transition-all duration-200;
 }
 .mobile-nav_cta {
   @apply font-outfit bg-accent-darken text-4xl text-white rounded-full px-5 py-3 hover:bg-transparent  hover:backdrop-blur-md hover:text-accent-darken transition-all duration-100 active:translate-y-2 hover:scale-110 hover:border-accent-darken hover:border-2;
