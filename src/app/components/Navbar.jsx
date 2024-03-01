@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from "next/image";
 import { motion, useScroll } from "framer-motion"
 import { RiMenu3Fill } from "react-icons/ri";
@@ -18,16 +18,23 @@ const Navbar = () => {
     scrollYProgress.onChange((latest) => {
       
       if (latest > 0.04) {
-        document.querySelector("nav").classList.add("nav_scrolled");
+        document.querySelector("#navbar").classList.add("nav_scrolled");
       } else {
-        document.querySelector("nav").classList.remove("nav_scrolled");
+        document.querySelector("#navbar").classList.remove("nav_scrolled");
       }
     });
   }, []);
 
+  // useEffect(() => {
+  //   const html = document.querySelector("html");
+  //   if (html) {
+  //     html.style.overflow = showingMobileNav ? "hidden" : "auto";
+  //   }
+  // }, [showingMobileNav]);
+  
   return (
     <>
-      <motion.nav whileInView={{ opacity: [0, 1] }} initial={{ opacity: 0 }} transition={{ duration: 0.5 }} className="flex items-center absolute padding_page py-5 w-full bg-gradient-to-b from-white/80 to-transparent from-10% z-40">
+      <motion.nav id='navbar' whileInView={{ opacity: [0, 1] }} initial={{ opacity: 0 }} transition={{ duration: 0.5 }} className="flex items-center absolute padding_page py-5 w-full bg-gradient-to-b from-white/80 to-transparent from-10% z-40">
           <a href="">
             <Image src="/newsiya-logo.svg" alt="Vercel Logo" width={48} height={16} />
           </a>
@@ -49,7 +56,7 @@ const Navbar = () => {
           showingMobileNav &&
         
           <motion.div 
-            className="absolute w-full h-full bg-primary 0 top-0 right-0 z-50 flex justify-center items-center flex-col"
+            className="sticky w-full h-[100vh] bg-primary 0 top-0 right-0 z-50 flex justify-center items-center flex-col"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
