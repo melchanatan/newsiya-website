@@ -59,7 +59,7 @@ const ServicesCarousel = () => {
 
     return (
         <Reorder.Group axis={isMobile ? "y" : "x"} values={items} onReorder={handleReorder}
-         className="flex flex-col md:flex-row md:items-center md:justify-center gap-[5vw] md:w-[130vw] max-w-[90%] md:max-w-auto" 
+         className="flex flex-col md:flex-row md:items-center md:justify-center gap-[5vw] md:w-[130vw] md:max-w-auto" 
          >
                     {items.map((item, index) => (
                         <Reorder.Item   dragListener={isMobile ? false : true}
@@ -75,11 +75,11 @@ export default ServicesCarousel
 
 const ServicesCarouselCard = ({info, isSelected, onClick}) => {
   return (
-    <AnimatePresence className={`flex-row flex w-[50%] items-center`} >
+    <AnimatePresence className={``} >
         <Image 
             onClick={onClick}
             draggable={false}
-            className={`rounded-[40px] md:mb-4 w-full h-[150px] md:h-[250px] object-cover hover:${!isSelected ? 'border-[10px]' : 'border-[0px] translate-x-[-4rem] w-[20rem] md:w-auto'} hover:border-white transition-all md:translate-x-0`}  
+            className={`rounded-[40px] md:mb-4 w-full h-[150px] md:h-[250px] object-cover hover:${!isSelected ? 'border-[10px] max-w-[90%] ml-auto mr-auto' : 'border-[0px] translate-x-[-4rem] w-[20rem] md:w-auto'} hover:border-white transition-all md:translate-x-0 `}  
             src={info.image} width={400} height={500}>
          </Image>
             {
@@ -92,7 +92,7 @@ const ServicesCarouselCard = ({info, isSelected, onClick}) => {
                 transition={{duration: 0.3}}
             >
                 <h3 className="header-3 translate-x-[-3rem] md:translate-x-0">{info.title}</h3>
-                <p className="w-[28ch] md:w-[36ch] md:text-center translate-x-[-3rem] md:translate-x-0">
+                <p className="w-[25ch] md:w-[36ch] md:text-center translate-x-[-3rem] md:translate-x-0">
                     {info.description}
                 </p>
             </motion.div>

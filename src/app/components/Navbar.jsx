@@ -39,7 +39,7 @@ const Navbar = () => {
               <li className="nav_item"><a href="">Gallery</a></li>
               <a href="" className="link_button">Book Now</a>
 
-              <button className="p-2 group" onClick={toggleMobileNav}>
+              <button className="p-2 group md:hidden" onClick={toggleMobileNav}>
                 <RiMenu3Fill className="w-8 h-8 group-active:scale-125"/>
               </button>
           </ul>

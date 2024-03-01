@@ -76,12 +76,12 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="services" className="bg-primary  align-center justify-center flex flex-col items-center">
+      <section id="services" className="bg-primary align-center justify-center flex flex-col items-center">
         <h1 className="mb-5 heading">Services</h1>
 
         <ServicesCarousel />
       </section>
-      <section id="reviews" className="bg-white  pb-20 !pr-0">
+      <section id="reviews" className="bg-white pb-20 !pr-0 ">
       <h1 className="heading mb-5 padding_page ">Reviews</h1>
       <ReviewsSlider />
 
@@ -90,7 +90,7 @@ export default function Home() {
     <MyMap className="w-[60vw] h-[40vh] lg:w-[50vw]" />
     <div className="mt-[4vh] ">
       <h1 className="heading mb-5">Contacts</h1>
-      <p className="w-[36ch]">
+      <p className="w-[95%] md:w-[36ch]">
         ไอซียู อ่อนด้อยเอเซีย นิวหมั่นโถว แอปเปิ้ล เคลื่อนย้าย ตุ๊กตุ๊กศากยบุตรหน่อมแน้ม เฮียไวอากร้าพาร์ทเนอร์ ฮวงจุ้ยบาร์บี้อุรังคธาตุ มิวสิคกุมภาพันธ์ไฮไลต์ สตริงสามแยกแครอทกระดี๊กระด๊ากระดี๊กระด๊า
       </p>
     </div>

@@ -49,6 +49,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 h1 {
   @apply text-title-clamp font-semibold leading-[1] tracking-wide;
 }
