@@ -61,12 +61,24 @@ section {
   @apply py-10 lg:py-20
 }
 
+.example {
+  width: 80%;
+  height: min-content;
+  stroke: #bf4d00;
+  padding: 4%;
+  border: 1px solid #eaeef5;
+}
+
 .heading {
   @apply font-outfit font-bold text-primary-darken uppercase;
 }
 
 .nav_scrolled {
   @apply !sticky top-0 backdrop-blur-sm left-0;
+}
+
+.nav_dropdown_item {
+  @apply flex items-center gap-2 p-2 hover:bg-gray-300 rounded-xl cursor-pointer;
 }
 
 .nav_item {
@@ -101,7 +113,7 @@ section {
 }
 
 .room_price {
-  @apply absolute bottom-0  flex bg-white px-5 py-3 items-end;
+  @apply absolute bottom-0 flex bg-white px-5 py-3 items-end;
 }
 
 .room_price--right {

@@ -92,12 +92,11 @@ const ServicesCarouselCard = ({info, isSelected, onClick}) => {
                 transition={{duration: 0.3}}
             >
                 <h3 className="header-3 translate-x-[-3rem] md:translate-x-0">{info.title}</h3>
-                <p className="w-[25ch] md:w-[36ch] md:text-center translate-x-[-3rem] md:translate-x-0">
+                <p className="w-[23ch] sm:w-[25ch] md:w-[36ch] xl:w-[80%] md:text-center translate-x-[-3rem] md:translate-x-0">
                     {info.description}
                 </p>
             </motion.div>
             }
-       
     </AnimatePresence>
   )
 }

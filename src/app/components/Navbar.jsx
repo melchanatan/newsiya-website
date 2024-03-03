@@ -5,6 +5,7 @@ import { motion, useScroll } from "framer-motion"
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 import { AnimatePresence } from 'framer-motion';
+import BookNow from './BookNow';
 
 const Navbar = () => {
   const { scrollYProgress } = useScroll();
@@ -44,8 +45,7 @@ const Navbar = () => {
               <li className="nav_item"><a href="#services">Services</a></li>
               <li className="nav_item"><a href="#contacts">Contacts</a></li>
               <li className="nav_item"><a href="">Gallery</a></li>
-              <a href="" className="link_button">Book Now</a>
-
+              <BookNow/>
               <button className="p-2 group md:hidden" onClick={toggleMobileNav}>
                 <RiMenu3Fill className="w-8 h-8 group-active:scale-125"/>
               </button>
