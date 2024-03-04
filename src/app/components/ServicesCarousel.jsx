@@ -79,7 +79,7 @@ const ServicesCarouselCard = ({info, isSelected, onClick}) => {
         <Image 
             onClick={onClick}
             draggable={false}
-            className={`rounded-[40px] md:mb-4 w-full h-[150px] md:h-[250px] object-cover hover:${!isSelected ? 'border-[10px] max-w-[90%] ml-auto mr-auto' : 'border-[0px] translate-x-[-4rem] w-[20rem] md:w-auto'} hover:border-white transition-all md:translate-x-0 `}  
+            className={`rounded-[40px] md:mb-4 w-full h-[150px] md:h-[250px] object-cover hover:border-[10px] hover:${!isSelected ? ' max-w-[90%] ml-auto mr-auto' : ' translate-x-[-4rem] w-[20rem] md:w-auto'} hover:border-primary-darken transition-all md:translate-x-0 `}  
             src={info.image} width={400} height={500}>
          </Image>
             {

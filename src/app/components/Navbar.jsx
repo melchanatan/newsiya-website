@@ -72,7 +72,7 @@ const Navbar = () => {
                 <li className="mobile-nav_item"><a href="#contacts">Contacts</a></li>
                 <li className="mobile-nav_item"><a href="">Gallery</a></li>
             </ul>
-            <a href="" className="mobile-nav_cta mt-[6vh]">Book Now</a>
+            <BookNow isNav={true}/>
           </motion.div>
             }
       </AnimatePresence>
