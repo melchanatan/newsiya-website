@@ -105,7 +105,7 @@ section {
 }
 
 .room_image {
-  @apply col-span-full md:col-span-2 w-full rounded-[50px] relative;
+  @apply col-span-full md:col-span-2 w-full rounded-[50px] relative ;
 }
 
 .header-3 {

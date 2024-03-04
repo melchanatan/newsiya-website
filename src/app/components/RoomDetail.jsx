@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { cubicBezier } from "framer-motion"
 import { IoIosArrowForward,IoIosArrowBack } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
+import { GoLinkExternal } from "react-icons/go";
+import { IoIosLink } from "react-icons/io";
 
 const RoomDetail = ({image}) => {
     const [showingOverlay, setShowingOverlay] = useState(false)
@@ -18,9 +20,12 @@ const RoomDetail = ({image}) => {
         {
             !showingOverlay ?
         <>
-            <div className="room_image">
-            <Image className="room_image" src={image} width={400} height={400}>
+            <div className="room_image group" >
+            <Image className=" room_image group-hover:brightness-75 transition-all" src={image} width={400} height={400}>
             </Image>
+            <button className='absolute left-[50%] translate-x-[-50%] top-0 bottom-0' onClick={() => paginate(-1)}>
+                <IoIosLink className='opacity-0 group-hover:opacity-100 circular_icon_button group-active:scale-50'/>
+            </button>
             <div className="room_price room_price--right">
               <h1 className="text-accent-darken !tracking-tight">800 ฿</h1>
               <span className="text-accent-darken text-xl">/ คืน</span>
@@ -122,8 +127,8 @@ const RoomDetailCard = ({image, toggleOverlay}) => {
                     }
                 }}
             />
-            <button className='absolute right-[0] top-[0] p-3' onClick={() =>toggleOverlay()}>
-                <IoIosClose className='w-[3rem] h-[3rem] fill-white rounded-full '/>
+            <button className='absolute right-[0.75rem] top-[0.75rem] z-30' onClick={() =>toggleOverlay()}>
+                <IoIosClose className='w-[3rem] h-[3rem] fill-accent-darken shadow-lg rounded-full hover:bg-white/40 transition-all'/>
             </button>
             <button className='absolute left-[1rem] top-0 bottom-0' onClick={() => paginate(-1)}>
                 <IoIosArrowBack className='circular_icon_button'/>
