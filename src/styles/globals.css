@@ -93,7 +93,7 @@ section {
 }
 
 .link_button {
-  @apply  font-outfit bg-accent-darken text-white rounded-full px-3 py-1 hover:bg-transparent  hover:backdrop-blur-md hover:text-accent-darken transition-all duration-100 active:translate-y-2 hover:scale-110 hover:border-accent-darken hover:border-2;
+  @apply inline font-outfit bg-accent-darken text-white rounded-full px-3 py-1 hover:bg-transparent  hover:backdrop-blur-md hover:text-accent-darken transition-all duration-100 active:translate-y-2 hover:scale-110 hover:border-accent-darken hover:border-2;
 }
 
 .padding_page {
@@ -126,4 +126,8 @@ section {
 
 .room_info_container {
   @apply flex flex-col items-start justify-center col-span-full md:col-span-1
+}
+
+.circular_icon_button {
+  @apply w-[4rem] h-[4rem] stroke-accent-darken bg-white rounded-full p-4 shadow-lg hover:scale-125 transition-all duration-300 hover:brightness-75 active:scale-75
 }

@@ -61,13 +61,13 @@ const ServicesCarousel = () => {
         <Reorder.Group axis={isMobile ? "y" : "x"} values={items} onReorder={handleReorder}
          className="flex flex-col md:flex-row md:items-center md:justify-center gap-[5vw] md:w-[130vw] md:max-w-auto" 
          >
-                    {items.map((item, index) => (
-                        <Reorder.Item   dragListener={isMobile ? false : true}
-                        className={`pointer-none select-none mb-4 ${ 1 === index ? "w-[50%]" : "w-full"} md:w-[33%] flex md:flex-col`} key={item} value={item}>
-                          <ServicesCarouselCard onClick={() => swapToCenter(item)} info={infos[item]}  isSelected={1 === index}/>
-                        </Reorder.Item>
-                    ))}
-          </Reorder.Group>
+            {items.map((item, index) => (
+                <Reorder.Item   dragListener={isMobile ? false : true}
+                className={`pointer-none select-none mb-4 ${ 1 === index ? "w-[50%]" : "w-full"} md:w-[33%] flex md:flex-col`} key={item} value={item}>
+                    <ServicesCarouselCard onClick={() => swapToCenter(item)} info={infos[item]}  isSelected={1 === index}/>
+                </Reorder.Item>
+            ))}
+        </Reorder.Group>
     )
 }
 

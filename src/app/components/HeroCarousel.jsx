@@ -131,7 +131,6 @@ const HeroCarousel = () => {
                             />
                         )
                     }
-                    
                 </ul>
             </div>
         </AnimatePresence>
