@@ -11,7 +11,10 @@ const Navbar = () => {
   const { scrollYProgress } = useScroll();
   const [showingMobileNav, setShowingMobileNav] = useState(false)
 
-  const toggleMobileNav = () => {
+  const toggleMobileNav = (event) => {
+    if (event.target.classList.contains("nav_dropdown_item")) {
+      return;
+    }
     setShowingMobileNav( prev => !prev)
   }
 
@@ -61,7 +64,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            onClick={toggleMobileNav}
+            onClick={(e) => toggleMobileNav(e)}
           >
             <button className="absolute top-5 right-5 group">
               <IoMdClose className="w-[3rem] h-[3rem] group-active:scale-110 group-active:rotate-[270deg] transition-all duration-300" />
