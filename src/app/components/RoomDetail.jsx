@@ -6,7 +6,15 @@ import { cubicBezier } from "framer-motion"
 import { IoIosArrowForward,IoIosArrowBack } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
 import { GoLinkExternal } from "react-icons/go";
-import { IoIosLink } from "react-icons/io";
+import { IoIosLink, IoIosWifi  } from "react-icons/io";
+import { IoIosFitness } from "react-icons/io";
+import { TbAirConditioning } from "react-icons/tb";
+import { CgSmartHomeRefrigerator } from "react-icons/cg";
+import { LuTv2 } from "react-icons/lu";
+import { BsSafe } from "react-icons/bs";
+import { MdOutlineOtherHouses } from "react-icons/md";
+import { TbSmokingNo } from "react-icons/tb";
+import { RiSafeLine } from "react-icons/ri";
 
 const easing = cubicBezier(.86,.21,.03,1)
 
@@ -28,7 +36,7 @@ const RoomDetail = ({image}) => {
                 exit={{ opacity: 0, scale: 0.75 }}
                 transition={{
                     ease: easing,
-                    duration: 0.8,
+                    duration: 0.6,
                     }}
 
             >
@@ -107,6 +115,23 @@ const RoomDetailCard = ({image, toggleOverlay}) => {
             };
         }
     };
+
+    const details = [
+        {icon: <MdOutlineOtherHouses/>, name: "ขนาดห้อง: 28 ตารางเมตร"},
+        {icon: <TbSmokingNo />, name: "ห้องปลอดบุหรี่"},
+
+    ]
+    
+    
+    const amenities = [
+        {icon: <IoIosFitness/>, name: "ฟิตเนส"},
+        {icon: <TbAirConditioning />, name: "เครื่องปรับอากาศ"},
+        {icon: <IoIosWifi />, name: "ฟรี Wi-Fi"},
+        {icon: <LuTv2 />, name: "โทรทัศน์ดาวเทียม/เคเบิล"},
+        {icon: <RiSafeLine />, name: "ตู้เซฟในห้องพัก"},
+
+    ];
+
   return (
     <motion.div 
     className='col-span-full flex-col justify-center items-center my-20'
@@ -115,7 +140,7 @@ const RoomDetailCard = ({image, toggleOverlay}) => {
     exit={{ opacity: 0, scale: 0.75 }}
     transition={{
         ease: easing,
-        duration: 0.8,
+        duration: 0.6,
         }}
     >
         <div className="relative h-[20rem] w-full">
@@ -175,20 +200,37 @@ const RoomDetailCard = ({image, toggleOverlay}) => {
             </div>
             <div className="">
                 <h3 className='font-bold text-xl'>รายระเอียด</h3>
-                <ul>
-                    <li>ues</li>
+                <ul className='flex flex-col gap-1 [&>*]:flex-row [&>*]:gap-2 [&>*]:flex [&>*]:items-center'>
+                    {
+                        details.map((detail, index) =>
+                            <li key={index}>
+                                {detail.icon}
+                                <span>{detail.name}</span>
+                            </li>
+                        )
+                    }
                 </ul>
             </div>
             <div className="">
                 <h3 className='font-bold text-xl'>สิ่งอำนวยความสะดวก</h3>
-                <ul>
-                    <li>ues</li>
+                <ul className='flex flex-col gap-1 [&>*]:flex-row [&>*]:gap-2 [&>*]:flex [&>*]:items-center'>      
+                    {
+                        amenities.map((amenity, index) =>
+                            <li key={index}>
+                                {amenity.icon}
+                                <span>{amenity.name}</span>
+                            </li>
+                        )
+                    }
                 </ul>
             </div>
         </div>
     </motion.div>
   )
 }
+
+
+
 
 const IndexIndicator = ({isActive, onClick}) => {
     return (
