@@ -8,6 +8,8 @@ import { IoIosClose } from "react-icons/io";
 import { GoLinkExternal } from "react-icons/go";
 import { IoIosLink } from "react-icons/io";
 
+const easing = cubicBezier(.86,.21,.03,1)
+
 const RoomDetail = ({image}) => {
     const [showingOverlay, setShowingOverlay] = useState(false)
 
@@ -16,21 +18,30 @@ const RoomDetail = ({image}) => {
         setShowingOverlay(prev => !prev)
     }
   return (
-    <>
+    <AnimatePresence>
         {
             !showingOverlay ?
         <>
-            <div className="room_image group" >
-            <Image className=" room_image group-hover:brightness-75 transition-all" src={image} width={400} height={400}>
+            <motion.div className="room_image group"
+                initial={{ opacity: 0, scale: 0.75 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.75 }}
+                transition={{
+                    ease: easing,
+                    duration: 0.8,
+                    }}
+
+            >
+            <Image className=" room_image group-hover:brightness-75 transition-all" src={image} width={400} height={400} onClick={() => toggleOverlay()}>
             </Image>
-            <button className='absolute left-[50%] translate-x-[-50%] top-0 bottom-0' onClick={() => paginate(-1)}>
+            <button className='absolute left-[50%] translate-x-[-50%] top-0 bottom-0' onClick={() => toggleOverlay()}>
                 <IoIosLink className='opacity-0 group-hover:opacity-100 circular_icon_button group-active:scale-50'/>
             </button>
             <div className="room_price room_price--right">
               <h1 className="text-accent-darken !tracking-tight">800 ฿</h1>
               <span className="text-accent-darken text-xl">/ คืน</span>
             </div>
-            </div>
+            </motion.div>
             <div className="room_info_container mb-4 md:mb-0">
               <h3 className="header-3">ห้องสวีท</h3>
               <div className="">
@@ -41,9 +52,9 @@ const RoomDetail = ({image}) => {
               </div>
             </div>
         </> :
-        <RoomDetailCard image={image} toggleOverlay={toggleOverlay}/>
+            <RoomDetailCard image={image} toggleOverlay={toggleOverlay}/>
         }
-    </>
+    </AnimatePresence>
   )
 }
 
@@ -56,8 +67,6 @@ const RoomDetailCard = ({image, toggleOverlay}) => {
         '/hero-img-2.jpg',
     ]
 
-    const easing = cubicBezier(.86,.21,.03,1)
-
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
     const swipeConfidenceThreshold = 10000;
@@ -67,7 +76,6 @@ const RoomDetailCard = ({image, toggleOverlay}) => {
     };
 
     const paginate = (newDirection) => {
-
         if (newDirection < 0 && currentImageIndex == 0) {
             setCurrentImageIndex(imageUrls.length - 1);
             return;
@@ -77,7 +85,6 @@ const RoomDetailCard = ({image, toggleOverlay}) => {
                 prev => (prev + 1*newDirection) % imageUrls.length
             );
         }
-
     };
 
     const variants = {
@@ -101,7 +108,16 @@ const RoomDetailCard = ({image, toggleOverlay}) => {
         }
     };
   return (
-    <div className='col-span-full flex-col justify-center items-center'>
+    <motion.div 
+    className='col-span-full flex-col justify-center items-center my-20'
+    initial={{ opacity: 0, scale: 0.75 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0, scale: 0.75 }}
+    transition={{
+        ease: easing,
+        duration: 0.8,
+        }}
+    >
         <div className="relative h-[20rem] w-full">
             <motion.img
                 className='rounded-[40px] object-cover h-[20rem] w-full'
@@ -150,7 +166,7 @@ const RoomDetailCard = ({image, toggleOverlay}) => {
                 }
             </ul>
         </div>
-        <div className="flex flex-row gap-2 mt-4 [&>*]:flex-1 [&>*]:pr-2 [&>*:not(:last-child)]:border-r-2 border-accent-darken ">
+        <div className="flex flex-row gap-2 mt-4 [&>*]:flex-1 [&>*]:pr-2 [&>*:not(:last-child)]:border-r-2 border-accent-darken">
             <div className="">
                 <h1>ห้องสวีท</h1>
                 <p>
@@ -170,7 +186,7 @@ const RoomDetailCard = ({image, toggleOverlay}) => {
                 </ul>
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 
