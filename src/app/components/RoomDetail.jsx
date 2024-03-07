@@ -5,13 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cubicBezier } from "framer-motion";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
-import { GoLinkExternal } from "react-icons/go";
 import { IoIosLink, IoIosWifi } from "react-icons/io";
 import { IoIosFitness } from "react-icons/io";
 import { TbAirConditioning } from "react-icons/tb";
-import { CgSmartHomeRefrigerator } from "react-icons/cg";
 import { LuTv2 } from "react-icons/lu";
-import { BsSafe } from "react-icons/bs";
 import { MdOutlineOtherHouses } from "react-icons/md";
 import { TbSmokingNo } from "react-icons/tb";
 import { RiSafeLine } from "react-icons/ri";
@@ -96,6 +93,7 @@ const RoomImage = ({ image, toggleOverlay }) => {
         src={image}
         width={400}
         height={400}
+        alt="room image"
         onClick={() => toggleOverlay()}
       ></Image>
 
@@ -185,7 +183,7 @@ const RoomDetailCard = ({ image, toggleOverlay }) => {
           className="rounded-[40px] object-cover h-[20rem] w-full"
           src={imageUrls[currentImageIndex]}
           variants={variants}
-          key={currentImageIndex}
+          key={"room-image-2" + currentImageIndex}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -230,7 +228,7 @@ const RoomDetailCard = ({ image, toggleOverlay }) => {
               onClick={() => {
                 setCurrentImageIndex(index);
               }}
-              key={index}
+              key={"indicator1" + index}
             />
           ))}
         </ul>
@@ -249,7 +247,7 @@ const RoomDetailCard = ({ image, toggleOverlay }) => {
           <h3 className="font-bold text-xl">รายระเอียด</h3>
           <ul className="flex flex-col gap-1 [&>*]:flex-row [&>*]:gap-2 [&>*]:flex [&>*]:items-center">
             {details.map((detail, index) => (
-              <li key={index}>
+              <li key={"detail" + index}>
                 {detail.icon}
                 <span>{detail.name}</span>
               </li>
@@ -260,7 +258,7 @@ const RoomDetailCard = ({ image, toggleOverlay }) => {
           <h3 className="font-bold text-xl">สิ่งอำนวยความสะดวก</h3>
           <ul className="flex flex-col gap-1 [&>*]:flex-row [&>*]:gap-2 [&>*]:flex [&>*]:items-center">
             {amenities.map((amenity, index) => (
-              <li key={index}>
+              <li key={"amenity" + index}>
                 {amenity.icon}
                 <span>{amenity.name}</span>
               </li>
