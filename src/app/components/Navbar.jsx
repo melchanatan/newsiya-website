@@ -45,7 +45,7 @@ const Navbar = () => {
               <h4 className=' font-outfit'>Newsiya Hotel</h4>
               <p>โรงเเรมนิว สิยะ</p>
             </div>
-            <div className='absolute right-10'>
+            <div className='absolute right-[10vw]'>
               <BookNow />
             </div>
           </a>

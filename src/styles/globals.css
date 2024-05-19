@@ -74,7 +74,7 @@ section {
 }
 
 .nav_scrolled {
-  @apply !sticky top-0 backdrop-blur-sm left-0;
+  @apply !sticky top-0 left-0;
 }
 
 .nav_dropdown_item {
@@ -98,6 +98,10 @@ section {
 
 .link_button {
   @apply inline font-outfit bg-accent-darken text-white rounded-full px-3 py-1 hover:bg-transparent  hover:backdrop-blur-md hover:text-accent-darken transition-all duration-100 active:translate-y-2 hover:scale-110 hover:border-accent-darken hover:border-2;
+}
+
+.link_button--transparent {
+  @apply !bg-white/20 !text-white !border-white border-[1px];
 }
 
 .padding_page {
