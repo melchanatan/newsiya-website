@@ -1,7 +1,7 @@
 import "../styles/globals.css"
-import Navbar from "./components/Navbar"
+import Navbar from "../components/Navbar"
 import localFont from 'next/font/local'
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
 
 const maehongson = localFont({
   src: [
