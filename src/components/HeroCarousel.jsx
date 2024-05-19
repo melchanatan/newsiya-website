@@ -80,7 +80,7 @@ const HeroCarousel = () => {
 
     return (
         <AnimatePresence initial={false} >
-            <div className="overflow-hidden w-full h-[70vh] max-h-[60rem] bg-no-repeat bg-center aspect-auto  bg-cover rounded-b-[8vw] border-primary-darken border-b-[10px] relative z-0 bg-primary-darken">
+            <div className="overflow-hidden w-full h-[70vh] max-h-[60rem] bg-no-repeat bg-center aspect-auto bg-cover rounded-b-[8vw] border-primary-darken border-b-[10px] relative z-0 bg-primary-darken">
                 <motion.img
                     className='w-full h-full object-cover'
                     src={imageUrls[currentImageIndex]}

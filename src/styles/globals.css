@@ -53,6 +53,9 @@ html, body {
   contain: paint;
 }
 
+body {
+  @apply bg-primary;
+}
 h1 {
   @apply text-title-clamp font-semibold leading-[1] tracking-wide;
 }

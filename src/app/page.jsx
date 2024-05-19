@@ -6,6 +6,7 @@ import { IoMdStarOutline } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import HeroCarousel from "../components/HeroCarousel";
 import ReviewsSlider from "../components/ReviewsSlider";
+import Carousel from "../components/Carousel";
 
 const Page = () => {
   return (
@@ -45,8 +46,8 @@ const Page = () => {
       <section id="reviews" className="bg-white pb-20 !pr-0 ">
         <h1 className="heading mb-5 padding_page ">Reviews</h1>
         <ReviewsSlider />
-
       </section>
+      <Carousel />
 
     </div>
   )

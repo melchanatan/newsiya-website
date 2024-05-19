@@ -3,7 +3,6 @@ import { IoMdStarOutline } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import HeroCarousel from "../../components/HeroCarousel";
 import MyMap from "../../components/MyMap";
-import ServicesCarousel from "../../components/ServicesCarousel";
 import ReviewsSlider from "../../components/ReviewsSlider";
 import {withSplashScreen} from "../../components/WithSplashscreen";
 import Navbar from "../../components/Navbar";
