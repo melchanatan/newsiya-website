@@ -82,7 +82,11 @@ section {
 }
 
 .nav_item {
-  @apply hidden md:inline cursor-pointer font-outfit hover:scale-125 transition-all duration-200 active:translate-y-2 font-semibold text-accent-darken p-2 select-none;
+  @apply hidden md:flex gap-1 items-center cursor-pointer text-lg font-maehongson hover:scale-125 transition-transform duration-200 active:translate-y-2 text-white p-2 select-none;
+}
+
+.nav_dropdown {
+  @apply dropdown-content z-[1] menu p-2 mt-1 shadow bg-base-100 rounded-box font-maehongson w-52;
 }
 
 .mobile-nav_item {

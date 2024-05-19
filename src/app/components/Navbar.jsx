@@ -6,6 +6,7 @@ import { RiMenu3Fill } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 import { AnimatePresence } from 'framer-motion';
 import BookNow from './BookNow';
+import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
   const { scrollYProgress } = useScroll();
@@ -15,12 +16,12 @@ const Navbar = () => {
     if (event.target.classList.contains("nav_dropdown_item")) {
       return;
     }
-    setShowingMobileNav( prev => !prev)
+    setShowingMobileNav(prev => !prev)
   }
 
   useState(() => {
     scrollYProgress.onChange((latest) => {
-      
+
       if (latest > 0.04) {
         document.querySelector("#navbar").classList.add("nav_scrolled");
       } else {
@@ -29,58 +30,55 @@ const Navbar = () => {
     });
   }, []);
 
-  // useEffect(() => {
-  //   const html = document.querySelector("html");
-  //   if (html) {
-  //     html.style.overflow = showingMobileNav ? "hidden" : "auto";
-  //   }
-  // }, [showingMobileNav]);
-  
   return (
     <>
-      <motion.nav id='navbar' whileInView={{ opacity: [0, 1] }} initial={{ opacity: 0 }} transition={{ duration: 0.5 }} className="flex items-center absolute padding_page py-5 w-full bg-gradient-to-b from-white/80 to-transparent from-10% z-40">
-          <a href="">
+      <nav
+        id='navbar'
+        whileInView={{ opacity: [0, 1] }} initial={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col items-center justify-center absolute w-full z-40"
+      >
+        <div className="relative w-full bg-primary-darken py-5 flex justify-center items-center shadow-lg">
+          <a href="" className='inline-flex text-white flex-row justify-center items-center gap-4 text-xl'>
             <Image src="/newsiya-logo.svg" alt="Vercel Logo" width={48} height={16} />
+            <div>
+              <h4 className=' font-outfit'>Newsiya Hotel</h4>
+              <p>โรงเเรมนิว สิยะ</p>
+            </div>
+            <div className='absolute right-10'>
+              <BookNow />
+            </div>
           </a>
-          
-          <ul className="flex gap-[5vw] ml-auto uppercase items-center ">
-              <li className="nav_item"><a href="#rooms">Rooms</a></li>
-              <li className="nav_item"><a href="#services">Services</a></li>
-              <li className="nav_item"><a href="#contacts">Contacts</a></li>
-              <li className="nav_item"><a href="">Gallery</a></li>
-              <BookNow/>
-              <button className="p-2 group md:hidden" onClick={toggleMobileNav}>
-                <RiMenu3Fill className="w-8 h-8 group-active:scale-125"/>
-              </button>
-          </ul>
-      </motion.nav>
-      <AnimatePresence>
-        {
-          showingMobileNav &&
-        
-          <motion.div 
-            className="sticky w-full h-[100vh] bg-primary 0 top-0 right-0 z-50 flex justify-center items-center flex-col"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            onClick={(e) => toggleMobileNav(e)}
-          >
-            <button className="absolute top-5 right-5 group">
-              <IoMdClose className="w-[3rem] h-[3rem] group-active:scale-110 group-active:rotate-[270deg] transition-all duration-300" />
-            </button>
-            <ul className="flex gap-[1.6vh] uppercase items-center flex-col ">
-                <li className="mobile-nav_item"><a href="#rooms">Rooms</a></li>
-                <li className="mobile-nav_item"><a href="#services">Services</a></li>
-                <li className="mobile-nav_item"><a href="#contacts">Contacts</a></li>
-                <li className="mobile-nav_item"><a href="">Gallery</a></li>
+        </div>
+        <ul className="flex justify-center gap-[3vw] uppercase items-center w-[80%] bg-accent-darken translate-y-[-10px] rounded-xl">
+          <li className="nav_item"><a href="#rooms">หน้าเเรก</a></li>
+          <li className="nav_item"><a href="#services">เกี่ยวกับนิว สิยะ</a></li>
+          <div className="dropdown dropdown-bottom dropdown-end">
+            <div tabIndex={0} role="button" className="nav_item">บริการอื่นๆ<IoIosArrowDown /></div>
+            <ul tabIndex={0} className="nav_dropdown">
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
             </ul>
-            <BookNow isNav={true}/>
-          </motion.div>
-            }
-      </AnimatePresence>
+          </div>
+          <div className="dropdown dropdown-bottom dropdown-end">
+            <div tabIndex={0} role="button" className="nav_item">ธุระกิจในเครือ<IoIosArrowDown /></div>
+            <ul tabIndex={0} className="nav_dropdown">
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+            </ul>
+          </div>
+          <li className="nav_item"><a href="">สถานที่ท่องเที่ยว</a></li>
+          <li className="nav_item"><a href="">ราคาที่พัก</a></li>
+          <li className="nav_item"><a href="">ติดต่อ</a></li>
+
+          <button className="p-2 group md:hidden" onClick={toggleMobileNav}>
+            <RiMenu3Fill className="w-8 h-8 group-active:scale-125" />
+          </button>
+        </ul>
+      </nav>
+
     </>
-    
+
   )
 }
 
