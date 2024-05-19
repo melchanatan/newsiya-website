@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const page = () => {
   return (
-    <section id="rooms" className="padding_page mt-20 grid grid-cols-3 gap-y-8 gap-x-10">
+    <section id="rooms" className="padding_page mt-[7rem] grid grid-cols-3 gap-y-8 gap-x-10">
       <h1 className="heading col-span-full">Rooms</h1>
       <RoomDetail image={'/room-1.png'}/>
       <div className="room_info_container order-1 md:order-[0] ">

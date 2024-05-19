@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 const page = () => {
   return (
-    <section id="travel" className="bg-primary mt-20 align-center justify-center flex flex-row gap-[3vw] items-center">
+    <section id="travel" className="bg-primary mt-[7rem] align-center justify-center flex flex-row gap-[3vw] items-center">
       <Image
         className="rounded-[50px] border-primary border-[3px] h-[50vh]" src='/hero-img.png'
         width={500}
