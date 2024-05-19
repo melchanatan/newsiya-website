@@ -51,13 +51,12 @@ const Navbar = () => {
           </a>
         </div>
         <ul className="flex justify-center gap-[3vw] uppercase items-center w-[80%] bg-accent-darken translate-y-[-10px] rounded-xl">
-          <li className="nav_item"><a href="#rooms">หน้าเเรก</a></li>
-          <li className="nav_item"><a href="#services">เกี่ยวกับนิว สิยะ</a></li>
+          <li className="nav_item"><a href="/">หน้าเเรก</a></li>
+          <li className="nav_item"><a href="/about">เกี่ยวกับนิว สิยะ</a></li>
           <div className="dropdown dropdown-bottom dropdown-end">
             <div tabIndex={0} role="button" className="nav_item">บริการอื่นๆ<IoIosArrowDown /></div>
             <ul tabIndex={0} className="nav_dropdown">
-              <li><a>Item 1</a></li>
-              <li><a>Item 2</a></li>
+              <li><a href='/service'>สิ่งอำนวยความสะดวก</a></li>
             </ul>
           </div>
           <div className="dropdown dropdown-bottom dropdown-end">
@@ -67,9 +66,9 @@ const Navbar = () => {
               <li><a>Item 2</a></li>
             </ul>
           </div>
-          <li className="nav_item"><a href="">สถานที่ท่องเที่ยว</a></li>
-          <li className="nav_item"><a href="">ราคาที่พัก</a></li>
-          <li className="nav_item"><a href="">ติดต่อ</a></li>
+          <li className="nav_item"><a href="/travel">สถานที่ท่องเที่ยว</a></li>
+          <li className="nav_item"><a href="/pricing">ราคาที่พัก</a></li>
+          <li className="nav_item"><a href="/contact">ติดต่อ</a></li>
 
           <button className="p-2 group md:hidden" onClick={toggleMobileNav}>
             <RiMenu3Fill className="w-8 h-8 group-active:scale-125" />

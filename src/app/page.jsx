@@ -1,6 +1,4 @@
 import React from 'react'
-import Home from './pages/Home'
-import WithSplashscreen from '../components/WithSplashscreen'
 import Image from "next/image";
 import { IoMdStarOutline } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
