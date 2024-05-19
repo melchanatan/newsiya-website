@@ -9,13 +9,13 @@ const maehongson = localFont({
       path: '../fonts/Maehongson/pk_maehongson_regular-webfont.woff2',
       weight: '400',
       style: 'normal',
-    }, 
+    },
     {
       path: '../fonts/Maehongson/pk_maehongson-semi_bold-webfont.woff',
       weight: '700',
       style: 'normal',
-    }, 
-   ],
+    },
+  ],
   variable: '--font-maehongson',
 })
 
@@ -29,7 +29,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={maehongson.className + " "}>
+        <Navbar />
         {children}
+        <section id="footer" className="bg-primary !py-0">
+          <Footer />
+        </section>
       </body>
     </html>
   );

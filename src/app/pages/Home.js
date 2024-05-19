@@ -13,8 +13,6 @@ import RoomDetail from "../../components/RoomDetail";
 const Home = () => {
 return (
   <>
-    <Navbar />
-
     <main className="bg-primary h-[100vh] rounded-b-[4rem] flex flex-col">
       <HeroCarousel/>
       <header className="padding_page flex md:items-center md:justify-between flex-1 flex-col md:flex-row items-start justify-center">
