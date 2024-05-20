@@ -43,7 +43,7 @@ const Navbar = () => {
             <Image src="/newsiya-logo.svg" alt="Vercel Logo" width={48} height={16} />
             <div>
               <h4 className=' font-outfit'>Newsiya Hotel</h4>
-              <p>โรงเเรมนิว สิยะ</p>
+              <p className='hidden md:inline'>โรงเเรมนิว สิยะ</p>
             </div>
             <div className='absolute right-[10vw]'>
               <BookNow />
@@ -69,15 +69,12 @@ const Navbar = () => {
           <li className="nav_item"><a href="/travel">สถานที่ท่องเที่ยว</a></li>
           <li className="nav_item"><a href="/pricing">ราคาที่พัก</a></li>
           <li className="nav_item"><a href="/contact">ติดต่อ</a></li>
-
           <button className="p-2 group md:hidden" onClick={toggleMobileNav}>
             <RiMenu3Fill className="w-8 h-8 group-active:scale-125" />
           </button>
         </ul>
       </nav>
-
     </>
-
   )
 }
 
