@@ -13,6 +13,7 @@
     "dotenv": "^16.4.5",
     "framer-motion": "^11.0.6",
     "google-maps-react-markers": "^2.0.8",
+    "lightgallery": "^2.7.2",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
