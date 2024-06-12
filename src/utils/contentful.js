@@ -22,3 +22,12 @@ export const getContentHero = cache(async () => {
     promotionImages: result.fields.promotionImages,
   }
 })
+
+
+export const getData = cache(async () => {
+  const result = await client.getEntry(entryIdAbout)
+  return {
+    image: result.fields.image,
+    text: result.fields.text,
+  }
+})

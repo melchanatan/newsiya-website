@@ -33,7 +33,7 @@ const Page = async () => {
             <h1 className="!text-hero-clamp text-accent-darken ">
               {title}
             </h1>
-            <h1 className="!text-hero-clamp  text-primary-darken">{subtitle}</h1>
+            <h1 className="max-w-[28ch] !text-hero-clamp  text-primary-darken">{subtitle}</h1>
           </div>
           <div className="flex gap-[4vw] justify-center items-start">
             <div className="order-2 md:order-1">

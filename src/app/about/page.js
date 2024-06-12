@@ -1,17 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import { cache } from 'react'
-
-// export const revalidate = 3600; 
-
-// const ENTRY_ID = "1fswxyxIb0PhjQXJfebeT2"
-// export const getData = cache(async () => {
-//   const result = await client.getEntry(ENTRY_ID)
-//   return {
-    
-//   }
-// })
-
 
 const page = async () => {
   return (

@@ -6,7 +6,7 @@ import { cubicBezier } from "framer-motion"
 import InteractiveOverlay from './InteractiveOverlay';
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
-const HeroCarousel = ({images}) => {
+const HeroCarousel = ({ images }) => {
 
     const easing = cubicBezier(.86, .21, .03, 1)
 
@@ -78,22 +78,26 @@ const HeroCarousel = ({images}) => {
     return (
         <AnimatePresence initial={false} >
             <div className="relative overflow-hidden w-full h-[520px] bg-no-repeat bg-center aspect-auto bg-cover z-0 bg-primary-darken">
-                <div
-                    className={`transition-all hover:scale-110 active:brightness-75 top-[50%] absolute -translate-y-1/2 left-[4vw] p-6 duration-100 flex justify-center items-center rounded-full bg-white shadow-xl z-[10] cursor-pointer`}
-                    onClick={() => {
-                        paginate(-1);
-                    }}
-                >
-                    <IoIosArrowBack className='w-10 h-10 stroke-accent-darken' />
-                </div>
-                <div
-                    className={`transition-all hover:scale-110 active:brightness-75 top-[50%] absolute -translate-y-1/2 right-[4vw] p-6 duration-100 flex justify-center items-center rounded-full bg-white shadow-xl z-[10] cursor-pointer`}
-                    onClick={() => {
-                        paginate(1);
-                    }}
-                >
-                    <IoIosArrowForward className='w-10 h-10 stroke-accent-darken' />
-                </div>
+                {images.length > 1 && 
+                <>
+                    <div
+                        className={`transition-all hover:scale-110 active:brightness-75 top-[50%] absolute -translate-y-1/2 left-[4vw] p-6 duration-100 flex justify-center items-center rounded-full bg-white shadow-xl z-[10] cursor-pointer`}
+                        onClick={() => {
+                            paginate(-1);
+                        }}
+                    >
+                        <IoIosArrowBack className='w-10 h-10 stroke-accent-darken' />
+                    </div>
+                    <div
+                        className={`transition-all hover:scale-110 active:brightness-75 top-[50%] absolute -translate-y-1/2 right-[4vw] p-6 duration-100 flex justify-center items-center rounded-full bg-white shadow-xl z-[10] cursor-pointer`}
+                        onClick={() => {
+                            paginate(1);
+                        }}
+                    >
+                        <IoIosArrowForward className='w-10 h-10 stroke-accent-darken' />
+                    </div>
+                </>
+                }
                 <motion.img
                     className='w-full h-full object-cover'
                     src={images[currentImageIndex].src}

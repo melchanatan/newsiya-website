@@ -101,18 +101,22 @@ const HeroCarousel = ({images}) => {
             }
           }}
         />
-        <InteractiveOverlay
-          className={`absolute top-0 left-0 w-full h-full`}
-          handleClickLeft={() => {
-            paginate(-1);
-            setIntervalStop(true);
-          }}
-          handleClickRight={() => {
-            paginate(1);
-            setIntervalStop(true);
-          }}
-        />
-
+        
+        {
+          images.length > 1 &&
+          <InteractiveOverlay
+            className={`absolute top-0 left-0 w-full h-full`}
+            handleClickLeft={() => {
+              paginate(-1);
+              setIntervalStop(true);
+            }}
+            handleClickRight={() => {
+              paginate(1);
+              setIntervalStop(true);
+            }}
+          />
+        }
+       
         <ul className="right-[8vw] bottom-[1.4rem] absolute flex gap-3">
           {images.map((imageUrl, index) => (
             <IndexIndicator
