@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
+    "contentful": "^10.11.10",
     "dotenv": "^16.4.5",
     "framer-motion": "^11.0.6",
     "google-maps-react-markers": "^2.0.8",

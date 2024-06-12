@@ -5,8 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cubicBezier } from "framer-motion";
 import InteractiveOverlay from "./InteractiveOverlay";
 
-const HeroCarousel = () => {
-  const imageUrls = ["/hero-img.png", "/hero-img-2.jpg"];
+const HeroCarousel = ({images}) => {
   const easing = cubicBezier(0.86, 0.21, 0.03, 1);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -25,11 +24,11 @@ const HeroCarousel = () => {
     }
 
     if (newDirection < 0 && currentImageIndex == 0) {
-      setCurrentImageIndex(imageUrls.length - 1);
+      setCurrentImageIndex(images.length - 1);
       return;
     } else {
       setCurrentImageIndex(
-        (prev) => (prev + 1 * newDirection) % imageUrls.length
+        (prev) => (prev + 1 * newDirection) % images.length
       );
     }
   };
@@ -78,7 +77,8 @@ const HeroCarousel = () => {
       <div className="overflow-hidden w-full h-[70vh] max-h-[60rem] bg-no-repeat bg-center aspect-auto  bg-cover rounded-b-[8vw] border-primary-darken border-b-[10px] relative z-0 bg-primary-darken">
         <motion.img
           className="w-full h-full object-cover"
-          src={imageUrls[currentImageIndex]}
+          src={images[currentImageIndex].src}
+          alt={images[currentImageIndex].alt}
           variants={variants}
           key={"room-image2" + currentImageIndex}
           initial={{ opacity: 0 }}
@@ -114,7 +114,7 @@ const HeroCarousel = () => {
         />
 
         <ul className="right-[8vw] bottom-[1.4rem] absolute flex gap-3">
-          {imageUrls.map((imageUrl, index) => (
+          {images.map((imageUrl, index) => (
             <IndexIndicator
               isActive={index == currentImageIndex}
               onClick={() => {

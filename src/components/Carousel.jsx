@@ -6,11 +6,8 @@ import { cubicBezier } from "framer-motion"
 import InteractiveOverlay from './InteractiveOverlay';
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
-const HeroCarousel = () => {
-    const imageUrls = [
-        '/hero-img.png',
-        '/hero-img-2.jpg',
-    ]
+const HeroCarousel = ({images}) => {
+
     const easing = cubicBezier(.86, .21, .03, 1)
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -29,12 +26,12 @@ const HeroCarousel = () => {
         }
 
         if (newDirection < 0 && currentImageIndex == 0) {
-            setCurrentImageIndex(imageUrls.length - 1);
+            setCurrentImageIndex(images.length - 1);
             return;
         }
         else {
             setCurrentImageIndex(
-                prev => (prev + 1 * newDirection) % imageUrls.length
+                prev => (prev + 1 * newDirection) % images.length
             );
         }
     };
@@ -99,7 +96,8 @@ const HeroCarousel = () => {
                 </div>
                 <motion.img
                     className='w-full h-full object-cover'
-                    src={imageUrls[currentImageIndex]}
+                    src={images[currentImageIndex].src}
+                    alt={images[currentImageIndex].alt}
                     variants={variants}
                     key={currentImageIndex}
                     initial={{ opacity: 0 }}
@@ -126,7 +124,7 @@ const HeroCarousel = () => {
                 <ul className='right-[8vw] bottom-[1.4rem] absolute flex gap-3'>
 
                     {
-                        imageUrls.map((imageUrl, index) =>
+                        images.map((imageUrl, index) =>
                             <IndexIndicator
                                 isActive={index == currentImageIndex}
                                 onClick={() => {
