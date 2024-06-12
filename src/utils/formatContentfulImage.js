@@ -7,10 +7,10 @@ const formatContentfulImages = (images) => {
 }
 
 export const formatContentfulImage = (image) => {
-  console.log(image)
   return {
     src: "https:" + image.fields.file.url,
     alt: image.fields.title,
+    description: image.fields.description,
   }
 }
 

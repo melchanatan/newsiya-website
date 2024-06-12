@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Reorder, AnimatePresence, motion } from "framer-motion";
 
-const ServicesCarousel = () => {
+const ServicesCarousel = ({infos}) => {
   const [isMobile, setIsMobile] = useState(true);
 
   const handleResize = () => {
@@ -24,27 +24,6 @@ const ServicesCarousel = () => {
   }, []);
 
   const [items, setItems] = useState([0, 1, 2]);
-
-  const infos = [
-    {
-      image: "/service-1.jpg",
-      title: "สระว่างน้ำ 1",
-      description:
-        "ไอซียู อ่อนด้อยเอเซีย นิวหมั่นโถว แอปเปิ้ล เคลื่อนย้าย ตุ๊กตุ๊กศากยบุตรหน่อมแน้ม เฮียไวอากร้าพาร์ทเนอร์ ฮวงจุ้ยบาร์บี้อุรังคธาตุ มิวสิคกุมภาพันธ์ไฮไลต์ สตริงสามแยกแครอทกระดี๊กระด๊ากระดี๊กระด๊า",
-    },
-    {
-      image: "/service-1.jpg",
-      title: "สระว่างน้ำ 2",
-      description:
-        "ไอซียู อ่อนด้อยเอเซีย นิวหมั่นโถว แอปเปิ้ล เคลื่อนย้าย ตุ๊กตุ๊กศากยบุตรหน่อมแน้ม เฮียไวอากร้าพาร์ทเนอร์ ฮวงจุ้ยบาร์บี้อุรังคธาตุ มิวสิคกุมภาพันธ์ไฮไลต์ สตริงสามแยกแครอทกระดี๊กระด๊ากระดี๊กระด๊า",
-    },
-    {
-      image: "/service-1.jpg",
-      title: "สระว่างน้ำ 3",
-      description:
-        "ไอซียู อ่อนด้อยเอเซีย นิวหมั่นโถว แอปเปิ้ล เคลื่อนย้าย ตุ๊กตุ๊กศากยบุตรหน่อมแน้ม เฮียไวอากร้าพาร์ทเนอร์ ฮวงจุ้ยบาร์บี้อุรังคธาตุ มิวสิคกุมภาพันธ์ไฮไลต์ สตริงสามแยกแครอทกระดี๊กระด๊ากระดี๊กระด๊า",
-    },
-  ];
 
   const swapToCenter = (item) => {
     setItems((prev) => {
@@ -100,7 +79,7 @@ const ServicesCarouselCard = ({ info, isSelected, onClick }) => {
             ? " max-w-[90%] ml-auto mr-auto"
             : " translate-x-[-4rem] w-[20rem] md:w-auto"
         } hover:border-primary-darken transition-all md:translate-x-0 `}
-        src={info.image}
+        src={info.src}
         width={400}
         height={500}
       ></Image>
@@ -113,7 +92,7 @@ const ServicesCarouselCard = ({ info, isSelected, onClick }) => {
           transition={{ duration: 0.3 }}
         >
           <h3 className="header-3 translate-x-[-3rem] md:translate-x-0">
-            {info.title}
+            {info.alt}
           </h3>
           <p className="w-[23ch] sm:w-[25ch] md:w-[36ch] xl:w-[80%] md:text-center translate-x-[-3rem] md:translate-x-0">
             {info.description}
