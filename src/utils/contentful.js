@@ -24,7 +24,7 @@ export const getContentHero = cache(async () => {
 })
 
 
-export const getData = cache(async () => {
+export const getContentAbout = cache(async () => {
   const result = await client.getEntry(entryIdAbout)
   return {
     image: result.fields.image,
