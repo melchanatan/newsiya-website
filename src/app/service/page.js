@@ -10,7 +10,6 @@ const page = async () => {
 
     const formattedServiceImages = formatContentfulImages(serviceImages)
 
-
     return (
         <section id="services" className="bg-primary align-center justify-center flex flex-col items-center">
             <h1 className="mb-5 heading">Services</h1>

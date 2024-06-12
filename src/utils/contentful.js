@@ -5,6 +5,9 @@ const entryIdHero = "6nVvZP2GObxuQXLEf6xBgm"
 const entryIdAbout = "1fswxyxIb0PhjQXJfebeT2"
 const entryIdServices = "3hlrDsCxw3NsQkskwEH48e"
 const entryIdTravel = "7cCCWmyi4INFpRvkAPB11e"
+const entryIdPricing = "4iFiYUzanbJFuG9a7LdQ2W"
+const entryIdContact = "3MZdFoHejJSUHtRNTsKbx0"
+
 
 
 const client = contentful.createClient({
@@ -46,5 +49,19 @@ export const getContentTravel = cache(async () => {
   const result = await client.getEntry(entryIdTravel)
   return {
     images: result.fields.images
+  }
+})
+
+export const getContentPricing = cache(async () => {
+  const result = await client.getEntry(entryIdPricing)
+  return {
+    images: result.fields.images
+  }
+})
+
+export const getContentContact = cache(async () => {
+  const result = await client.getEntry(entryIdContact)
+  return {
+    description: result.fields.description
   }
 })
