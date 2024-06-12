@@ -4,6 +4,8 @@ import { cache } from 'react'
 const entryIdHero = "6nVvZP2GObxuQXLEf6xBgm"
 const entryIdAbout = "1fswxyxIb0PhjQXJfebeT2"
 const entryIdServices = "3hlrDsCxw3NsQkskwEH48e"
+const entryIdTravel = "7cCCWmyi4INFpRvkAPB11e"
+
 
 const client = contentful.createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -25,7 +27,6 @@ export const getContentHero = cache(async () => {
   }
 })
 
-
 export const getContentAbout = cache(async () => {
   const result = await client.getEntry(entryIdAbout)
   return {
@@ -36,8 +37,14 @@ export const getContentAbout = cache(async () => {
 
 export const getContentServices = cache(async () => {
   const result = await client.getEntry(entryIdServices)
-  console.log(result.fields.serviceImages)
   return {
     serviceImages: result.fields.serviceImages
+  }
+})
+
+export const getContentTravel = cache(async () => {
+  const result = await client.getEntry(entryIdTravel)
+  return {
+    images: result.fields.images
   }
 })
