@@ -8,9 +8,14 @@ import { AnimatePresence } from 'framer-motion';
 import BookNow from './BookNow';
 import { IoIosArrowDown } from "react-icons/io";
 
+import { usePathname } from 'next/navigation'
+
 const Navbar = () => {
   const { scrollYProgress } = useScroll();
   const [showingMobileNav, setShowingMobileNav] = useState(false)
+
+  const pathname = usePathname()
+  console.log(pathname)
 
   const toggleMobileNav = (event) => {
     if (event.target.classList.contains("nav_dropdown_item")) {
@@ -37,6 +42,9 @@ const Navbar = () => {
         whileInView={{ opacity: [0, 1] }} initial={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
         className="flex flex-col items-center justify-center absolute w-full z-40"
+        style={{
+          position: pathname=="/" ? "absolute" : "sticky"
+        }}
       >
         <div className="relative w-full bg-primary-darken py-5 flex justify-center items-center shadow-lg">
           <a href="" className='inline-flex text-white flex-row justify-center items-center gap-4 text-xl'>
