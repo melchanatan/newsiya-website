@@ -74,22 +74,24 @@ const ServicesCarouselCard = ({ info, isSelected, onClick }) => {
         onClick={onClick}
         draggable={false}
         alt="service image"
-        className={`rounded-[40px] md:mb-4 w-full h-[150px] md:h-[250px] object-cover hover:border-[10px] hover:${
+        className={`rounded-[40px] md:mb-4 w-full overflow-hidden h-[150px] md:h-[250px] object-cover hover:border-[10px] hover:${
           !isSelected
-            ? " max-w-[90%] ml-auto mr-auto"
+            ? " max-w-[90%] ml-auto mr-auto translate-y-[40px] scale-95"
             : " translate-x-[-4rem] w-[20rem] md:w-auto"
         } hover:border-primary-darken transition-all md:translate-x-0 `}
         src={info.src}
         width={400}
         height={500}
       ></Image>
-      {isSelected && (
         <motion.div
           className="md:text-center md:items-center flex flex-col"
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 100 }}
-          transition={{ duration: 0.3 }}
+          style={{
+            opacity: isSelected ? 1 : 0,
+          }}
+          // initial={{ opacity: 0, y: 100 }}
+          // animate={{ opacity: 1, y: 0 }}
+          // exit={{ opacity: 0, y: 100 }}
+          // transition={{ duration: 0.3 }}
         >
           <h3 className="header-3 translate-x-[-3rem] md:translate-x-0">
             {info.alt}
@@ -98,7 +100,7 @@ const ServicesCarouselCard = ({ info, isSelected, onClick }) => {
             {info.description}
           </p>
         </motion.div>
-      )}
+      {/* )} */}
     </AnimatePresence>
   );
 };
