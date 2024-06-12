@@ -10,16 +10,6 @@ const page = () => {
                 style={{objectFit:"cover"}}
                 alt='near by travel location'
             ></Image>
-            <table>
-                <tr>
-                    <th>ประเภท</th>
-                    <th>ประเภท</th>
-                    <th>ประเภท</th>
-                </tr>
-                <tr>
-                    <td>100px</td>
-                </tr>
-            </table>
         </section>
     )
 }
