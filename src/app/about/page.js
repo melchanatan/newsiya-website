@@ -10,9 +10,9 @@ const page = async () => {
 
   const formattedImage = formatContentfulImage(image);
   return (
-    <section id="about" className="bg-primary align-center justify-center flex flex-row gap-[3vw] items-center">
+    <section id="about" className="bg-primary align-center justify-center flex md:flex-row gap-[3vw] items-center flex-col">
       <Image
-        className="rounded-[50px] border-primary border-[3px] h-[50vh]" 
+        className="rounded-[50px] border-primary border-[3px] w-[50vw]" 
         src={formattedImage.src}
         width={500}
         height={400}
