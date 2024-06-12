@@ -5,20 +5,12 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import HeroCarousel from "../components/HeroCarousel";
 import ReviewsSlider from "../components/ReviewsSlider";
 import Carousel from "../components/Carousel";
-import * as contentful from "contentful";
 import { title } from 'process';
-import { cache } from 'react'
 import { format, parse } from 'path';
 import formatContentfulImage from '@/utils/formatContentfulImage';
-
-const client = contentful.createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-});
+import {getContentHero} from '@/utils/contentful';
 
 const Page = async () => {
-
-
   const {
     images,
     title,
@@ -27,7 +19,7 @@ const Page = async () => {
     agodaRating,
     reviews,
     promotionImages
-  } = await getData();
+  } = await getContentHero();
 
   const formattedImages = formatContentfulImage(images);
   const formattedPromotionImages = formatContentfulImage(promotionImages);
@@ -82,18 +74,3 @@ const Page = async () => {
 }
 
 export default Page;
-
-export const revalidate = 3600; // Revalidate every 60 seconds
-
-export const getData = cache(async () => {
-  const result = await client.getEntry(process.env.CONTENTFUL_ENTRY_ID)
-  return {
-    images: result.fields.images,
-    title: result.fields.title,
-    subtitle: result.fields.subtitle,
-    agodaReviewsCount: result.fields.agodaReviewsCount,
-    agodaRating: result.fields.agodaRating,
-    reviews: result.fields.reviews,
-    promotionImages: result.fields.promotionImages,
-  }
-})

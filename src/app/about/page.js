@@ -1,6 +1,19 @@
 import React from 'react'
 import Image from 'next/image'
-const page = () => {
+import { cache } from 'react'
+
+export const revalidate = 3600; 
+
+const ENTRY_ID = "1fswxyxIb0PhjQXJfebeT2"
+export const getData = cache(async () => {
+  const result = await client.getEntry(ENTRY_ID)
+  return {
+    
+  }
+})
+
+
+const page = async () => {
   return (
     <section id="travel" className="bg-primary mt-[7rem] align-center justify-center flex flex-row gap-[3vw] items-center">
       <Image
