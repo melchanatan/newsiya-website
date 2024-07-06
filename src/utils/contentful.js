@@ -1,5 +1,5 @@
 import * as contentful from "contentful";
-import { cache } from "react";
+import {} from "react";
 
 const entryIdHero = "6nVvZP2GObxuQXLEf6xBgm";
 const entryIdAbout = "1fswxyxIb0PhjQXJfebeT2";
@@ -13,9 +13,7 @@ const client = contentful.createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-export const revalidate = 10;
-
-export const getContentHero = cache(async () => {
+export const getContentHero = async () => {
   const result = await client.getEntry(entryIdHero);
   return {
     images: result.fields.images,
@@ -26,40 +24,40 @@ export const getContentHero = cache(async () => {
     reviews: result.fields.reviews,
     promotionImages: result.fields.promotionImages,
   };
-});
+};
 
-export const getContentAbout = cache(async () => {
+export const getContentAbout = async () => {
   const result = await client.getEntry(entryIdAbout);
   return {
     image: result.fields.image,
     text: result.fields.text,
   };
-});
+};
 
-export const getContentServices = cache(async () => {
+export const getContentServices = async () => {
   const result = await client.getEntry(entryIdServices);
   return {
     serviceImages: result.fields.serviceImages,
   };
-});
+};
 
-export const getContentTravel = cache(async () => {
+export const getContentTravel = async () => {
   const result = await client.getEntry(entryIdTravel);
   return {
     images: result.fields.images,
   };
-});
+};
 
-export const getContentPricing = cache(async () => {
+export const getContentPricing = async () => {
   const result = await client.getEntry(entryIdPricing);
   return {
     images: result.fields.images,
   };
-});
+};
 
-export const getContentContact = cache(async () => {
+export const getContentContact = async () => {
   const result = await client.getEntry(entryIdContact);
   return {
     description: result.fields.description,
   };
-});
+};
